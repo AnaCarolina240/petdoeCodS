@@ -65,7 +65,7 @@
       <div class="intro__grid">
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-1.png" alt="intro" />
+            <img src="https://th.bing.com/th/id/OIP.AwNNE6ikJS6rzyyYLlI6iAHaEK?rs=1&pid=ImgDetMain" alt="intro" />
           </div>
           <h4>Freelance</h4>
           <p>
@@ -76,7 +76,7 @@ bem-estar.
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-2.png" alt="intro" />
+            <img src="https://th.bing.com/th/id/OIP.AMNeVJn9iqosDV5UCO4_OAHaEK?w=960&h=540&rs=1&pid=ImgDetMain" alt="intro" />
           </div>
           <h4>Mapa</h4>
           <p>
@@ -87,7 +87,7 @@ mais proximas da sua casa.
         </div>
         <div class="intro__card">
           <div class="intro__image">
-            <img src="assets/intro-3.png" alt="intro" />
+            <img src="https://th.bing.com/th/id/OIP.tyfOUheOZ9ogLZ69rhRU3QHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" alt="intro" />
           </div>
           <h4>Contatos</h4>
           <p>
@@ -107,7 +107,7 @@ mais proximas da sua casa.
           <img src="assets/about-1.jpg" alt="about" />
         </div>
         <div class="about__content">
-          <span><img src="assets/about-1-icon.png" alt="about-icon" /></span>
+          <span><img src="https://w7.pngwing.com/pngs/511/196/png-transparent-dog-veterinarian-veterinary-medicine-pet-surgery-dog-thumbnail.png" alt="about-icon" /></span>
           <h4>Ajudas de emergência para seu pet</h4>
           <p>
             Temos veterinários especializados 24hrs aqui para fornecer cuidados rapidos com
@@ -189,13 +189,13 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
       <div class="service__flex">
         <div class="service__card">
           <div>
-            <img src="assets/service-1.png" alt="freelancer" />
+            <img src="https://pethappyday.com/wp-content/uploads/2022/05/kisspng-dog-pet-sitting-telephone-stock-photography-mobile-5ae86cf57c74f2.7468590615251816855098-min-1016x1024.png" alt="freelancer" />
           </div>
           <p>Contatos de emergência</p>
         </div>
         <div class="service__card">
           <div>
-            <img src="https://th.bing.com/th/id/R.4c3a9ea06326b112050c176c628c1a12?rik=s0y70OmXwqua%2fw&riu=http%3a%2f%2fwww.annhoff.com%2fwp-content%2fuploads%2f2015%2f12%2fhome-animal.jpg&ehk=CAspo36qJeunxI%2bK%2bJTkwYKj6T2GgVk%2bbUSEfQHOgfw%3d&risl=&pid=ImgRaw&r=0" alt="service" />
+            <img src="" alt="service" />
           </div>
           <p>Vacinacões</p>
         </div>

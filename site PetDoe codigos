@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | PetDoe</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">PetDoe</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#Voltar">Voltar</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#Mapa">Mapa</a></li>
+        <li><a href="#Freelance">Freelance</a></li>
+        <li><a href="#Serviços">Serviços</a></li>
+        <li><a href="#Contato">Contato</a></li>
+      </ul>
+    </nav>
+    <header id="Voltar">
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h4>Seja Bem Vindo</h4>
+          <h1><span>PetDoe</span></h1>
+          <h2>Faça a diferença com um toque.
+             Doe, Adote, Ame, Resgate!
+          </h2>
+          <p>
+            Oferecemos uma ampla gama de funcionalidades, incluindo mapas com localizações de ONG’s, profissionais e prestadores de serviços do mundo pet.
+
+          </p>
+          <div class="header__btn">
+            <button>
+              Começe Aqui!
+              <span><i class="ri-arrow-right-line"></i></span>
+            </button>
+          </div>
+        </div>
+        <div class="header__image">
+          <img src="https://petfanaticos.com.br/wp-content/themes/PetFanaticos/images/auau.png" alt="header" />
+        </div>
+      </div>
+      <div class="header__bottom"></div>
+    </header>
+
+    <section class="section__container intro__container">
+      <p class="section__subheader">Introdução</p>
+      <h2 class="section__header">Conheça Melhor o PetDoe</h2>
+      <div class="intro__grid">
+        <div class="intro__card">
+          <div class="intro__image">
+            <img src="assets/intro-1.png" alt="intro" />
+          </div>
+          <h4>Freelance</h4>
+          <p>
+           Conheça nossa equipe de veterinários, Cuidadores e Adestradores qualificados, dedicados ao seu animal de estimação
+bem-estar.
+          </p>
+          <a href="#">ler Mais</a>
+        </div>
+        <div class="intro__card">
+          <div class="intro__image">
+            <img src="assets/intro-2.png" alt="intro" />
+          </div>
+          <h4>Mapa</h4>
+          <p>
+          Onde você irá encontrar ONG´S e ABRIGOS, CASTRAMÓVEL, PONTOS DE VACINAÇÃO
+mais proximas da sua casa.
+          </p>
+          <a href="#">Ler Mais</a>
+        </div>
+        <div class="intro__card">
+          <div class="intro__image">
+            <img src="assets/intro-3.png" alt="intro" />
+          </div>
+          <h4>Contatos</h4>
+          <p>
+            Reach out to us for any inquiries or schedule an appointment for
+            your pet's care.
+          </p>
+          <a href="#">Ler Mais</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container about__container" id="Sobre">
+      <p class="section__subheader">Sobre</p>
+      <h2 class="section__header">O que temos para você</h2>
+      <div class="about__row">
+        <div class="about__image">
+          <img src="assets/about-1.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <span><img src="assets/about-1-icon.png" alt="about-icon" /></span>
+          <h4>Ajudas de emergência para seu pet</h4>
+          <p>
+            Temos veterinários especializados 24hrs aqui para fornecer cuidados rapidos com
+orientações para que seu pet permaneça em perfeita saúde.
+          </p>
+        </div>
+      </div>
+      <div class="about__row">
+        <div class="about__image">
+          <img src="assets/about-2.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <span><img src="assets/about-2-icon.png" alt="about-icon" /></span>
+          <h4>pet sitters, Adestradores e veterinários</h4>
+          <p>
+            Aqui, você encontrará profissionais qualificados prontos para cuidar, adestrar e proporcionar o melhor bem-estar para os seus pets. Seja você um tutor em busca de cuidados especiais, um adestrador em busca de novos clientes ou um veterinário querendo se conectar com amantes de animais, estamos aqui para facilitar essa conexão. 
+          </p>
+        </div>
+      </div>
+      <div class="about__row">
+        <div class="about__image">
+          <img src="assets/about-3.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <span><img src="assets/about-3-icon.png" alt="about-icon" /></span>
+          <h4>Deixe-nos cuidar do seu precioso e amado animal de estimação</h4>
+          <p>
+            Do banho ao estilo, oferecemos serviços profissionais de higiene para
+Mantenha seu animal de estimação com a melhor aparência e sensação.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="Mapa">
+        <h2>Mapa</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f1b3%3A0x5045675218ceed30!2sVeterin%C3%A1rio!5e0!3m2!1spt-BR!2sbr!4v1633031234567!5m2!1spt-BR!2sbr" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="product" id="Freelance">
+      <div class="section__container product__container">
+        <p class="section__subheader">Freelance</p>
+        <h2 class="section__header">Escolha uma pessoa confiavel que cuidará do seu pet.</h2>
+        <div class="product__grid">
+          <div class="product__card">
+            <img src="assets/product-1.jpg" alt="freelancer" />
+            <h4>jOÃO</h4>
+            <p>
+              Convenient and eco-friendly trash bags for easy pet waste
+              disposal.
+            </p>
+            <h3>R$29.00</h3>
+          </div>
+          <div class="product__card">
+            <img src="assets/product-2.jpg" alt="product" />
+            <h4>lARISSA</h4>
+            <p>
+              Explore our range of stylish and functional accessories for your
+              furry friends.
+            </p>
+            <h3>R$49.00</h3>
+          </div>
+          <div class="product__card">
+            <img src="assets/product-3.jpg" alt="freelancer" />
+            <h4>FELIPE</h4>
+            <p>
+              Nutritious and delicious dog food to keep your pet healthy and
+              happy.
+            </p>
+            <h3>R$79.00</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container service__container" id="Serviços">
+      <p class="section__subheader">Serviços</p>
+      <h2 class="section__header">O que oferecemos para você</h2>
+      <div class="service__flex">
+        <div class="service__card">
+          <div>
+            <img src="assets/service-1.png" alt="freelancer" />
+          </div>
+          <p>Contatos de emergência</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="https://th.bing.com/th/id/R.4c3a9ea06326b112050c176c628c1a12?rik=s0y70OmXwqua%2fw&riu=http%3a%2f%2fwww.annhoff.com%2fwp-content%2fuploads%2f2015%2f12%2fhome-animal.jpg&ehk=CAspo36qJeunxI%2bK%2bJTkwYKj6T2GgVk%2bbUSEfQHOgfw%3d&risl=&pid=ImgRaw&r=0" alt="service" />
+          </div>
+          <p>Vacinacões</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="assets/service-3.png" alt="service" />
+          </div>
+          <p>Pets sitters e Adestradors</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="assets/service-4.png" alt="service" />
+          </div>
+          <p>Clinicas Veterinarias</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="assets/service-5.png" alt="service" />
+          </div>
+          <p>Serviços de hospedagem para animais de estimação</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cliente">
+      <div class="section__container client__container">
+        <p class="section__subheader">Comentarios</p>
+        <h2 class="section__header">O que falam sobre nois</h2>
+        <div class="swiper">  
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__details">
+                  <img src="assets/client-1.jpg" alt="client" />
+                  <div>
+                    <h4>Sarah Johnson</h4>
+                    <h5>Graphic Designer</h5>
+                  </div>
+                </div>
+                <p>
+                  The care my dog received at Pet Doctor was exceptional. The
+                  vets were attentive cared about my dog's well-being.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__details">
+                  <img src="assets/client-2.jpg" alt="client" />
+                  <div>
+                    <h4>Michael Adams</h4>
+                    <h5>Software Engineer</h5>
+                  </div>
+                </div>
+                <p>
+                  Pet Doctor saved my cat during an emergency! Their quick
+                  response and expertise made all the difference.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__details">
+                  <img src="assets/client-3.jpg" alt="client" />
+                  <div>
+                    <h4>Emily Martinez</h4>
+                    <h5>Teacher</h5>
+                  </div>
+                </div>
+                <p>
+                  I trust Pet Doctor with all my pets. Their team is
+                  professional, and they always go the extra mile for their
+                  patients.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__details">
+                  <img src="assets/client-4.jpg" alt="client" />
+                  <div>
+                    <h4>Jason Lee</h4>
+                    <h5>Marketing Specialist</h5>
+                  </div>
+                </div>
+                <p>
+                  The grooming services at Pet Doctor are fantastic! My pup
+                  always comes back looking fresh and happy.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <div class="client__details">
+                  <img src="assets/client-5.jpg" alt="client" />
+                  <div>
+                    <h4>David Thompson</h4>
+                    <h5>Accountant</h5>
+                  </div>
+                </div>
+                <p>
+                  I've never seen a team so dedicated to animals. Pet Doctor is
+                  my go-to clinic for all pet-related issues.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container instagram__container">
+      <p>SEGUIR</p>
+      <h2 class="section__header">Instagram</h2>
+      <div class="instagram__grid">
+        <img src="assets/instagram-1.jpg" alt="instagram" />
+        <img src="assets/instagram-2.jpg" alt="instagram" />
+        <img src="assets/instagram-3.jpg" alt="instagram" />
+        <img src="assets/instagram-4.jpg" alt="instagram" />
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#">Uma Lugar para seu Pet ser bem cuidado</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <ul class="footer__links">
+            <li><a href="#">Voltar</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Loja</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Faq</a></li>
+            <li><a href="#">Contatos</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul class="footer__links">
+            <li><a href="#">Recife PE, Brasil</a></li>
+            <li><a href="#">Ver no Maps</a></li>
+          </ul>
+          <br />
+          <h4>Inquéritos</h4>
+          <ul class="footer__links">
+            <li><a href="#">+91 0987654321</a></li>
+            <li><a href="#">petdoelover@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Informativos</h4>
+          <p>Mantenha-se atualizado com as últimas notícias</p>
+          <form action="/">
+            <input type="text" placeholder="Your email" />
+            <button class="btn">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </form>
+          <br />
+          <h4>Siga-nos</h4>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-pinterest-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-tiktok-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

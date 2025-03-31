@@ -104,10 +104,10 @@ mais proximas da sua casa.
       <h2 class="section__header">O que temos para você</h2>
       <div class="about__row">
         <div class="about__image">
-          <img src="assets/about-1.jpg" alt="about" />
+          <img src="https://caesegatos.vet.br/wp-content/uploads/2022/02/servicosHome.webp" alt="about" />
         </div>
         <div class="about__content">
-          <span><img src="https://w7.pngwing.com/pngs/511/196/png-transparent-dog-veterinarian-veterinary-medicine-pet-surgery-dog-thumbnail.png" alt="about-icon" /></span>
+          <span><img src="https://cdn-icons-png.flaticon.com/512/2138/2138508.png" alt="about-icon" /></span>
           <h4>Ajudas de emergência para seu pet</h4>
           <p>
             Temos veterinários especializados 24hrs aqui para fornecer cuidados rapidos com
@@ -117,10 +117,10 @@ orientações para que seu pet permaneça em perfeita saúde.
       </div>
       <div class="about__row">
         <div class="about__image">
-          <img src="assets/about-2.jpg" alt="about" />
+          <img src="https://dotopet.com.br/wp-content/uploads/2024/01/pet-sitter.png" alt="about" />
         </div>
         <div class="about__content">
-          <span><img src="assets/about-2-icon.png" alt="about-icon" /></span>
+          <span><img src="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-pet-sitting-clipart-woman-sitting-with-her-dog-and-plant-cartoon-vector-png-image_6863723.png" alt="about-icon" /></span>
           <h4>pet sitters, Adestradores e veterinários</h4>
           <p>
             Aqui, você encontrará profissionais qualificados prontos para cuidar, adestrar e proporcionar o melhor bem-estar para os seus pets. Seja você um tutor em busca de cuidados especiais, um adestrador em busca de novos clientes ou um veterinário querendo se conectar com amantes de animais, estamos aqui para facilitar essa conexão. 
@@ -129,10 +129,10 @@ orientações para que seu pet permaneça em perfeita saúde.
       </div>
       <div class="about__row">
         <div class="about__image">
-          <img src="assets/about-3.jpg" alt="about" />
+          <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-wellness-dog-beauty-photo-png-image_13313234.png" alt="about" />
         </div>
         <div class="about__content">
-          <span><img src="assets/about-3-icon.png" alt="about-icon" /></span>
+          <span><img src="https://cdn-icons-png.flaticon.com/512/7965/7965939.png" alt="about-icon" /></span>
           <h4>Deixe-nos cuidar do seu precioso e amado animal de estimação</h4>
           <p>
             Do banho ao estilo, oferecemos serviços profissionais de higiene para
@@ -153,29 +153,26 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
         <h2 class="section__header">Escolha uma pessoa confiavel que cuidará do seu pet.</h2>
         <div class="product__grid">
           <div class="product__card">
-            <img src="assets/product-1.jpg" alt="freelancer" />
-            <h4>jOÃO</h4>
+            <img src="https://static.vecteezy.com/system/resources/previews/058/137/069/non_2x/a-man-wearing-a-plaid-shirt-and-red-pants-isolated-on-transparent-background-png.png" alt="freelancer" />
+            <h4>JOÃO</h4>
             <p>
-              Convenient and eco-friendly trash bags for easy pet waste
-              disposal.
+              João, 32 anos, é um adestrador apaixonado que transforma a relação entre pets e tutores. Com uma abordagem positiva e técnicas eficazes, ele ensina comandos e corrige comportamentos, sempre respeitando a natureza dos animais. João acredita que o adestramento fortalece o vínculo entre o pet e seu dono, tornando cada sessão divertida e enriquecedora.
             </p>
-            <h3>R$29.00</h3>
+            <h3>R$90.00</h3>
           </div>
           <div class="product__card">
-            <img src="assets/product-2.jpg" alt="product" />
-            <h4>lARISSA</h4>
+            <img src="https://esmalterianacional.com.br/wp-content/uploads/2022/03/mulher-png.png" alt="product" />
+            <h4>LARISSA</h4>
             <p>
-              Explore our range of stylish and functional accessories for your
-              furry friends.
+             Larissa, 34 anos, é uma dedicada pet walker que adora passear com os amigos de quatro patas. Com um carinho especial por cães de todas as raças, ela garante que cada passeio seja uma aventura divertida e segura. Além de proporcionar exercícios, Larissa se preocupa em criar um vínculo de confiança com os pets, oferecendo atenção e amor em cada momento. Deixe seu bichinho sob os cuidados dela e tenha a certeza de que ele estará em boas mãos!
             </p>
-            <h3>R$49.00</h3>
+            <h3>R$75.00</h3>
           </div>
           <div class="product__card">
-            <img src="assets/product-3.jpg" alt="freelancer" />
+            <img src="https://static.vecteezy.com/system/resources/previews/041/642/170/non_2x/ai-generated-portrait-of-handsome-smiling-young-man-with-folded-arms-isolated-free-png.png" alt="freelancer" />
             <h4>FELIPE</h4>
             <p>
-              Nutritious and delicious dog food to keep your pet healthy and
-              happy.
+             Felipe, 23 anos, é um pet sitter apaixonado por animais. Com experiência em cuidar de cães e gatos, ele oferece atenção, carinho e atividades divertidas para garantir que seu pet se sinta amado e seguro enquanto você está fora.
             </p>
             <h3>R$79.00</h3>
           </div>
@@ -189,25 +186,25 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
       <div class="service__flex">
         <div class="service__card">
           <div>
-            <img src="https://pethappyday.com/wp-content/uploads/2022/05/kisspng-dog-pet-sitting-telephone-stock-photography-mobile-5ae86cf57c74f2.7468590615251816855098-min-1016x1024.png" alt="freelancer" />
+            <img src="https://png.pngtree.com/png-clipart/20240202/original/pngtree-dog-phone-telephone-poster-photo-png-image_14213112.png" alt="freelancer" />
           </div>
           <p>Contatos de emergência</p>
         </div>
         <div class="service__card">
           <div>
-            <img src="" alt="service" />
+            <img src="https://images.vexels.com/media/users/3/290430/isolated/preview/9162b755f54d9217807694bd3f45c342-icone-de-vacina-veterinaria.png" alt="service" />
           </div>
           <p>Vacinacões</p>
         </div>
         <div class="service__card">
           <div>
-            <img src="assets/service-3.png" alt="service" />
+            <img src="https://cdn-icons-png.flaticon.com/512/14257/14257512.png" />
           </div>
           <p>Pets sitters e Adestradors</p>
         </div>
         <div class="service__card">
           <div>
-            <img src="assets/service-4.png" alt="service" />
+            <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11467083-ilustracao-de-logotipo-de-de-veterinario-de-gato-cachorro-coelho-e-cavalo-gratis-vetor.jpg" alt="service" />
           </div>
           <p>Clinicas Veterinarias</p>
         </div>
@@ -229,46 +226,42 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
             <div class="swiper-slide">
               <div class="client__card">
                 <div class="client__details">
-                  <img src="assets/client-1.jpg" alt="client" />
+                  <img src="https://i.pinimg.com/736x/f0/52/ab/f052ab44923d2e6b73ce5f8824950509.jpg" alt="client" />
                   <div>
-                    <h4>Sarah Johnson</h4>
-                    <h5>Graphic Designer</h5>
+                    <h4>Vitoria dos Santos</h4>
+                    <h5>Arquiteta</h5>
                   </div>
                 </div>
                 <p>
-                  The care my dog received at Pet Doctor was exceptional. The
-                  vets were attentive cared about my dog's well-being.
+                  Os serviços de pet sitter do site PetDoe são excelentes! A plataforma oferece funcionalidades práticas, como mapas com localizações de ONGs e profissionais, facilitando a busca por cuidados de qualidade para os pets. É uma ótima ferramenta para quem quer garantir o bem-estar dos animais. Parabéns pelo trabalho!
                 </p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="client__card">
                 <div class="client__details">
-                  <img src="assets/client-2.jpg" alt="client" />
+                  <img src="https://i.pinimg.com/474x/5b/a8/39/5ba8390e0a5aac2c43cdfcad2b7847ce.jpg" alt="client" />
                   <div>
-                    <h4>Michael Adams</h4>
-                    <h5>Software Engineer</h5>
+                    <h4>Roberto Carlos</h4>
+                    <h5>Empresário</h5>
                   </div>
                 </div>
                 <p>
-                  Pet Doctor saved my cat during an emergency! Their quick
-                  response and expertise made all the difference.
+                  Os serviços de mapa do site PetDoe são incríveis! Eles facilitam a localização de ONGs, profissionais e prestadores de serviços do mundo pet de forma prática e eficiente. Essa funcionalidade é uma grande ajuda para quem busca o melhor para seus animais, tornando a experiência muito mais acessível e segura. Parabéns pela iniciativa!
                 </p>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="client__card">
                 <div class="client__details">
-                  <img src="assets/client-3.jpg" alt="client" />
+                  <img src="https://i.pinimg.com/originals/2d/4b/5d/2d4b5d1234e2245f8277bde89dc2995d.jpg" alt="client" />
                   <div>
-                    <h4>Emily Martinez</h4>
-                    <h5>Teacher</h5>
+                    <h4>Emily Maria</h4>
+                    <h5>Professora</h5>
                   </div>
                 </div>
                 <p>
-                  I trust Pet Doctor with all my pets. Their team is
-                  professional, and they always go the extra mile for their
-                  patients.
+                  Os serviços de ONGs e a divulgação de doações e adoções no site PetDoe são admiráveis! Essa iniciativa não só ajuda a conectar animais em busca de um lar, mas também incentiva a solidariedade e o cuidado com os pets. A plataforma torna mais fácil para as pessoas encontrarem oportunidades de ajudar e adotar, promovendo um impacto positivo na vida dos animais. Parabéns pelo trabalho essencial!
                 </p>
               </div>
             </div>

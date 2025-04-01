@@ -47,7 +47,7 @@
           </p>
           <div class="header__btn">
             <button>
-              Começe Aqui!
+              Conheça o PetDoe!
               <span><i class="ri-arrow-right-line"></i></span>
             </button>
           </div>
@@ -204,15 +204,15 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
         </div>
         <div class="service__card">
           <div>
-            <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/11467083-ilustracao-de-logotipo-de-de-veterinario-de-gato-cachorro-coelho-e-cavalo-gratis-vetor.jpg" alt="service" />
+            <img src="https://cdn-icons-png.flaticon.com/512/5222/5222783.png" alt="service" />
           </div>
           <p>Clinicas Veterinarias</p>
         </div>
         <div class="service__card">
           <div>
-            <img src="assets/service-5.png" alt="service" />
+            <img src="https://cdn-icons-png.flaticon.com/512/1131/1131938.png" alt="service" />
           </div>
-          <p>Serviços de hospedagem para animais de estimação</p>
+          <p>Serviços de hospedagem Pet</p>
         </div>
       </div>
     </section>

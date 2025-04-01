@@ -30,7 +30,7 @@
         <li><a href="#Mapa">Mapa</a></li>
         <li><a href="#Freelance">Freelance</a></li>
         <li><a href="#Serviços">Serviços</a></li>
-        <li><a href="#Contato">Contato</a></li>
+        <li><a href="#Contatos">Contatos</a></li>
       </ul>
     </nav>
     <header id="Voltar">
@@ -320,13 +320,14 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
       <p>SEGUIR</p>
       <h2 class="section__header">Instagram</h2>
       <div class="instagram__grid">
-        <img src="assets/instagram-1.jpg" alt="instagram" />
-        <img src="assets/instagram-2.jpg" alt="instagram" />
-        <img src="assets/instagram-3.jpg" alt="instagram" />
-        <img src="assets/instagram-4.jpg" alt="instagram" />
+        <img src="https://media.gazetadopovo.com.br/vozes/2011/11/brinquedo121106-624x883-884cd46e.jpg" alt="instagram" />
+        <img src="https://www.crmvto.gov.br/wp-content/uploads/2021/09/Banner_640x640-com-logo-crmv.jpg" alt="instagram" />
+        <img src="https://gazetadopontal.com.br/wp-content/uploads/2022/11/8-1024x1024.jpg" alt="instagram" />
+        <img src="https://th.bing.com/th/id/OIP.hD6kWXdM3AHhDjdKULoKwAHaHa?w=750&h=750&rs=1&pid=ImgDetMain" alt="instagram" />
       </div>
     </section>
-
+ <section class="section__container service__container" id="Contatos">
+      <p class="section__subheader">Contatos</p>
     <footer id="contact">
       <div class="section__container footer__container">
         <div class="footer__col">

@@ -127,6 +127,7 @@ orientações para que seu pet permaneça em perfeita saúde.
           </p>
         </div>
       </div>
+    </section>
       <div class="about__row">
         <div class="about__image">
           <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-wellness-dog-beauty-photo-png-image_13313234.png" alt="about" />
@@ -140,6 +141,21 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
           </p>
         </div>
       </div>
+      <section class="banner__container">
+      <div class="banner__wrapper">
+        <img src="https://static.vecteezy.com/system/resources/previews/020/899/523/non_2x/happy-dog-smiling-dog-on-transparent-background-png.png" alt="banner" />
+        <img src="https://th.bing.com/th/id/OIP.zxoerZy9MG3q73puInzmiwHaHa?rs=1&pid=ImgDetMain" alt="banner" />
+        <img src="https://static.vecteezy.com/system/resources/previews/024/704/812/non_2x/hamster-with-ai-generated-free-png.png" alt="banner" />
+        <img src="https://static.vecteezy.com/system/resources/previews/009/373/052/non_2x/watercolor-cockatiel-bird-illustration-png.png" alt="banner" />
+        <img src="https://wallpapers.com/images/hd/close-up-tortoise-isolated-background-png-gnow6n3jlyww3ao1.png" alt="banner" />
+        <img src="https://th.bing.com/th/id/R.11e8f5a3e56d2131ba8117fd62b08399?rik=VLUkMgOlCZ11zQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoldfish-png-transparent-image-1993.png&ehk=jm8cBiXgnOZW07%2f6ZdwtoPBnBRCAsHgZxJMkrheFZEE%3d&risl=&pid=ImgRaw&r=0" alt="banner" />
+        <img src="https://th.bing.com/th/id/R.5eeadaf5b597f4133d7f246a5c1056ed?rik=ljJY2rIoiXHg8w&pid=ImgRaw&r=0" alt="banner" />
+        <img src="https://static.vecteezy.com/system/resources/previews/036/008/097/non_2x/ai-generated-rabbit-isolated-on-transparent-background-free-png.png" alt="banner" />
+        <img src="https://pngimg.com/uploads/lizard/lizard_PNG9.png" alt="banner" />
+        <img src="https://th.bing.com/th/id/R.51635cb3b46f1451518c18187811b882?rik=%2br7wpnpOn9Hi%2fw&pid=ImgRaw&r=0" alt="banner" />
+      </div>
+    </section>
+
     </section>
     <section id="Mapa">
         <h2>Mapa</h2>

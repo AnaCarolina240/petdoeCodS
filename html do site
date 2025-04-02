@@ -91,8 +91,7 @@ mais proximas da sua casa.
           </div>
           <h4>Contatos</h4>
           <p>
-            Reach out to us for any inquiries or schedule an appointment for
-            your pet's care.
+             Entre em Contatos direto com veterinários 24hrs, para duvidas e pequenas emergências do seu Pet .
           </p>
           <a href="#">Ler Mais</a>
         </div>
@@ -202,7 +201,7 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
       <div class="service__flex">
         <div class="service__card">
           <div>
-            <img src="https://png.pngtree.com/png-clipart/20240202/original/pngtree-dog-phone-telephone-poster-photo-png-image_14213112.png" alt="freelancer" />
+            <img src="https://cdn-icons-png.flaticon.com/512/2930/2930665.png" alt="freelancer" />
           </div>
           <p>Contatos de emergência</p>
         </div>
@@ -286,13 +285,12 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
                 <div class="client__details">
                   <img src="assets/client-4.jpg" alt="client" />
                   <div>
-                    <h4>Jason Lee</h4>
-                    <h5>Marketing Specialist</h5>
+                    <h4>Luiz Carlos</h4>
+                    <h5>Design</h5>
                   </div>
                 </div>
                 <p>
-                  The grooming services at Pet Doctor are fantastic! My pup
-                  always comes back looking fresh and happy.
+                 Entre em Contatos direto com veterinários 24hrs, para duvidas e pequenas emergências do seu Pet .
                 </p>
               </div>
             </div>
@@ -320,7 +318,7 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
       <p>SEGUIR</p>
       <h2 class="section__header">Instagram</h2>
       <div class="instagram__grid">
-        <img src="https://media.gazetadopovo.com.br/vozes/2011/11/brinquedo121106-624x883-884cd46e.jpg" alt="instagram" />
+        <img src="https://www2.bauru.sp.gov.br/arquivos/sist_noticias/45610/img_45610_1.jpeg" alt="instagram" />
         <img src="https://www.crmvto.gov.br/wp-content/uploads/2021/09/Banner_640x640-com-logo-crmv.jpg" alt="instagram" />
         <img src="https://gazetadopontal.com.br/wp-content/uploads/2022/11/8-1024x1024.jpg" alt="instagram" />
         <img src="https://th.bing.com/th/id/OIP.hD6kWXdM3AHhDjdKULoKwAHaHa?w=750&h=750&rs=1&pid=ImgDetMain" alt="instagram" />
@@ -341,10 +339,6 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
             <li><a href="#">Voltar</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Serviços</a></li>
-            <li><a href="#">Loja</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Faq</a></li>
             <li><a href="#">Contatos</a></li>
           </ul>
         </div>

@@ -194,6 +194,34 @@ Mantenha seu animal de estimação com a melhor aparência e sensação.
         </div>
       </div>
     </section>
+      <section class="fleet__container" id="car">
+      <h3 class="section__subheader">Campanha</h3>
+      <h2 class="section__header">Doe,Adote,Ame,Resgate!</h2>
+      <p class="section__description">
+        "Os animais são nossos companheiros, não nossos objetos. Cada vida merece amor, respeito e cuidados. Ao cuidar deles, estamos também cuidando de nós mesmos. Seja a voz de quem não pode falar. Proteja, respeite e ame!"
+
+
+      </p>
+      <div class="fleet__wrapper-1">
+        <div class="fleet__images">
+          <img src="https://th.bing.com/th/id/OIP.uKnohc5tc1U7_bYUd8I2KgHaEh?rs=1&pid=ImgDetMain" alt="fleet" />
+          <img src="https://th.bing.com/th/id/OIP.T7XEm-ZRjspLrekEvr9iIAHaE8?rs=1&pid=ImgDetMain" alt="fleet" />
+          <img src="https://th.bing.com/th/id/OIP.xq_W4jIp6IqIT9GqJsR8PgHaEH?rs=1&pid=ImgDetMain" alt="fleet" />
+          <img src="https://th.bing.com/th/id/R.4c64c132b1df4a3b027b049a4503c53d?rik=uwUrlhzML3JlCw&riu=http%3a%2f%2fanimais.culturamix.com%2fblog%2fwp-content%2fgallery%2fcuidar-bem-do-animal-de-estimacao-1%2fCuidar-Bem-Do-Animal-De-Estimacao-3.jpg&ehk=zgXQoJAPpLHIVGZkGhbtKo1rwefam7XMTkgPTWqC0bY%3d&risl=&pid=ImgRaw&r=0" alt="fleet" />
+          <img src="https://th.bing.com/th/id/OIP.RDIZRBgNuH1qJVJYzWy3dAHaEK?w=1280&h=720&rs=1&pid=ImgDetMain" alt="fleet" />
+        </div>
+      </div>
+      <div class="fleet__wrapper-2">
+        <div class="fleet__images">
+          <img src="https://dateando.com/wp-content/uploads/2024/05/image-53.png" alt="fleet" />
+          <img src="https://th.bing.com/th/id/OIP.F-zsst0oBVtUzhl5lcn1qwAAAA?w=474&h=294&rs=1&pid=ImgDetMain" alt="fleet" />
+          <img src="https://th.bing.com/th/id/R.8bd31c7f5c832afbe46d4e9fca7bfcdb?rik=4Xr7HyNbCghfwQ&pid=ImgRaw&r=0" alt="fleet" />
+          <img src="https://th.bing.com/th/id/R.4c5f4a2092eea7e8c823af92bf08583f?rik=5wew3LOZxIcyow&riu=http%3a%2f%2fequinemedsurg.com%2fcdn%2fshop%2farticles%2funnamed4_1200x630.jpg%3fv%3d1624293482&ehk=AwIJAoPHEHnjEfXJDoUZiptOPvr6zMZZdMTuKkUTSfE%3d&risl=&pid=ImgRaw&r=0" alt="fleet" />
+          <img src="https://barretosnews.com.br/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-19-at-14.08.51-1024x1024.jpeg" alt="fleet" />
+          <img src="https://arquidiocese-sp.org.br/wp-content/uploads/2021/10/pexels-gabriel-p-2053815-1-scaled.jpg" alt="fleet" />
+          <img src="https://georgiananesthesia.com/wp-content/uploads/iStock-992791120_res.jpg" alt="fleet" />
+        </div>
+      </div>
 
     <section class="section__container service__container" id="Serviços">
       <p class="section__subheader">Serviços</p>

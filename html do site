@@ -25,7 +25,7 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#Voltar">Voltar</a></li>
+        <li><a href="#Voltar">Entrar</a></li>
         <li><a href="#Sobre">Sobre</a></li>
         <li><a href="#Mapa">Mapa</a></li>
         <li><a href="#Freelance">Freelance</a></li>
@@ -399,13 +399,7 @@ Manter seu animal de estimação com a melhor aparência e sensação.
               <a href="#"><i class="ri-facebook-fill"></i></a>
             </li>
             <li>
-              <a href="#"><i class="ri-twitter-fill"></i></a>
-            </li>
-            <li>
               <a href="#"><i class="ri-youtube-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-pinterest-line"></i></a>
             </li>
             <li>
               <a href="#"><i class="ri-instagram-line"></i></a>
@@ -417,7 +411,7 @@ Manter seu animal de estimação com a melhor aparência e sensação.
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2024 Web Design Mastery. All rights reserved.
+        Copyright © 2025 www.PetDoe.com.br - Todos os direitos reservados.
       </div>
     </footer>
 

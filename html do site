@@ -39,7 +39,7 @@
           <h4>Seja Bem Vindo</h4>
           <h1><span>PetDoe</span></h1>
           <h2>Faça a diferença com um toque.
-             Doe, Adote, Ame, Resgate!
+             Doe, Adote, Ame e Resgate!
           </h2>
           <p>
             Oferecemos uma ampla gama de funcionalidades, incluindo mapas com localizações de ONG’s, profissionais e prestadores de serviços do mundo pet.
@@ -196,7 +196,7 @@ Manter seu animal de estimação com a melhor aparência e sensação.
     </section>
       <section class="fleet__container" id="car">
       <h3 class="section__subheader">Campanha</h3>
-      <h2 class="section__header">Doe,Adote,Ame,Resgate!</h2>
+      <h2 class="section__header">Doe, Adote, Ame e Resgate!</h2>
       <p class="section__description">
         "Os animais são nossos companheiros, não nossos objetos. Cada vida merece amor, respeito e cuidados. Ao cuidar deles, estamos também cuidando de nós mesmos. Seja a voz de quem não pode falar. Proteja, respeite e ame!"
 
@@ -263,7 +263,7 @@ Manter seu animal de estimação com a melhor aparência e sensação.
     <section class="cliente">
       <div class="section__container client__container">
         <p class="section__subheader">Comentarios</p>
-        <h2 class="section__header">O que falam sobre nois</h2>
+        <h2 class="section__header">O que falam sobre nós</h2>
         <div class="swiper">  
           <div class="swiper-wrapper">
             <div class="swiper-slide">

@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Pet Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<div class="container">
+  <h1>Cadastre-se</h1>
+
+  <form id="formCadastro">
+    <h2>Dados Pessoais</h2>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="nomeSocial">Nome Social:</label>
+    <input type="text" id="nomeSocial" name="nomeSocial">
+
+    <label>Gênero:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="genero" value="Prefiro não dizer" checked> Prefiro não dizer</label>
+      <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
+      <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
+    </div>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required>
+
+    <label for="celular">Celular:</label>
+    <input type="tel" id="celular" name="celular" required>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+    <h2>Endereço</h2>
+
+    <label for="rua">Rua:</label>
+    <input type="text" id="rua" name="rua" required>
+
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" name="numero" required>
+
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" required>
+
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" name="estado" required>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="plans">
+    <div class="plan">
+      <h2>Plano Gratuito</h2>
+      <h3>ASSINATURA GRÁTIS</h3>
+      <ul>
+        <li>✔ Mapas</li>
+        <li>• Clínicas Veterinárias</li>
+        <li>• ONGs</li>
+        <li>• Castra Móvel</li>
+        <li>✔ Contatos de ONGs</li>
+        <li>✔ Plataforma de Freelance</li>
+        <li>✔ Lembretes de Vacinas</li>
+      </ul>
+      <div class="price">R$ 0,00</div>
+      <button class="btn-assinar" data-plano="gratuito">Assinar</button>
+    </div>
+
+    <div class="plan">
+      <h2>Plano Premium</h2>
+      <h3>ASSINATURA PREMIUM</h3>
+      <ul>
+        <li>✔ Clube de Descontos</li>
+        <li>• 15% off em Veterinários e Adestradores</li>
+        <li>• 10% off em Pet Sitter, Dog Walker e Hospedagem</li>
+        <li>• 10% off em Pet Shops</li>
+        <li>✔ Fórum Interativo</li>
+        <li>✔ Chatbot</li>
+      </ul>
+      <div class="price">R$ 15,90</div>
+      <button class="btn-assinar" data-plano="premium">Assinar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento</title>
+  <link rel="stylesheet" href="style.css">
+  </div>
+
+  

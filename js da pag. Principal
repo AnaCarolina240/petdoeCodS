@@ -1,1 +1,211 @@
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
+
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+});
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
+
+const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".header__content h4", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".header__content h1", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".header__content h2", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+ScrollReveal().reveal(".header__content p", {
+  ...scrollRevealOption,
+  delay: 1500,
+});
+ScrollReveal().reveal(".header__btn", {
+  ...scrollRevealOption,
+  delay: 2000,
+});
+
+ScrollReveal().reveal(".intro__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+ScrollReveal().reveal(
+  ".about__row:nth-child(3) .about__image img, .about__row:nth-child(5) .about__image img",
+  {
+    ...scrollRevealOption,
+    origin: "left",
+  }
+);
+ScrollReveal().reveal(".about__row:nth-child(4) .about__image img", {
+  ...scrollRevealOption,
+  origin: "right",
+});
+ScrollReveal().reveal(".about__content span", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".about__content h4", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+ScrollReveal().reveal(".about__content p", {
+  ...scrollRevealOption,
+  delay: 1500,
+});
+
+ScrollReveal().reveal(".product__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+ScrollReveal().reveal(".service__card", {
+  duration: 1000,
+  interval: 500,
+});
+
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+});
+
+ScrollReveal().reveal(".instagram__grid img", {
+  duration: 1000,
+  interval: 500,
+});
+const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
+const fleet2 = document.querySelector(".fleet__wrapper-2 .fleet__images");
+
+const fleet1Content = Array.from(fleet1.children);
+const fleet2Content = Array.from(fleet2.children);
+
+fleet1Content.forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  fleet1.appendChild(duplicateNode);
+});
+
+fleet2Content.forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  fleet2.appendChild(duplicateNode);
+});
+
+// Inicializa o mapa com uma posição padrão
+const map = L.map('map').setView([-14.2350, -51.9253], 4); // Centro do Brasil
+
+// Adiciona camada de mapa
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Objeto para armazenar os marcadores
+let markers = [];
+
+// Função para obter o ícone baseado no tipo
+function getIcon(type) {
+  let iconUrl;
+  switch (type) {
+    case 'Clínica Veterinária':
+      iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
+      break;
+    case 'Castramóvel':
+      iconUrl = 'https://cdn-icons-png.flaticon.com/512/3201/3201398.png';
+      break;
+    case 'Vacinação':
+      iconUrl = 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png';
+      break;
+    default:
+      iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
+  }
+  return L.icon({
+    iconUrl: iconUrl,
+    iconSize: [30, 30]
+  });
+}
+
+// Função para carregar os dados do JSON e adicionar os marcadores
+async function loadLocations() {
+  try {
+    const response = await fetch('locations.json');
+    const data = await response.json();
+    data.forEach(loc => {
+      const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
+        .bindPopup(`<b>${loc.type}</b><br>${loc.name}`);
+      marker.type = loc.type; // Adiciona o tipo ao marcador
+      marker.addTo(map);
+      markers.push(marker);
+    });
+  } catch (error) {
+    console.error('Erro ao carregar os dados:', error);
+  }
+}
+
+// Função para buscar a localização baseada na cidade e estado
+async function searchLocation() {
+  const city = document.getElementById('cityInput').value.trim();
+  const state = document.getElementById('stateInput').value.trim();
+
+  if (!city || !state) {
+    alert('Por favor, insira cidade e estado.');
+    return;
+  }
+
+  const query = `${city}, ${state}, Brasil`;
+  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data && data.length > 0) {
+      const location = data[0];
+      map.setView([location.lat, location.lon], 13);
+    } else {
+      alert('Localização não encontrada.');
+    }
+  } catch (error) {
+    console.error('Erro na busca de localização:', error);
+  }
+}
+
+// Função para aplicar o filtro baseado nos checkboxes
+function applyFilter() {
+  const checkboxes = document.querySelectorAll('.filter-checkbox');
+  const selectedTypes = Array.from(checkboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+  markers.forEach(marker => {
+    if (selectedTypes.includes(marker.type)) {
+      marker.addTo(map);
+    } else {
+      map.removeLayer(marker);
+    }
+  });
+}
+
+// Adiciona o evento de mudança nos checkboxes
+document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
+  checkbox.addEventListener('change', applyFilter);
+});
+
+// Carrega os dados ao iniciar
+loadLocations();
 

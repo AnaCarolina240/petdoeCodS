@@ -25,7 +25,7 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#Voltar">Entrar</a></li>
+        <li><a href="#ONG'S">ONG'S</a></li>
         <li><a href="#Sobre">Sobre</a></li>
         <li><a href="#Mapa">Mapa</a></li>
         <li><a href="#Freelance">Freelance</a></li>
@@ -84,41 +84,37 @@ Oportunidades de freelancer e o mais importante:
           <img src="https://arquidiocese-sp.org.br/wp-content/uploads/2021/10/pexels-gabriel-p-2053815-1-scaled.jpg" alt="fleet" />
           <img src="https://georgiananesthesia.com/wp-content/uploads/iStock-992791120_res.jpg" alt="fleet" />
         </div>
-    <section class="section__container intro__container">
-      <p class="section__subheader">Introdução</p>
-      <h2 class="section__header">Conheça Melhor o PetDoe</h2>
-      <div class="intro__grid">
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="https://th.bing.com/th/id/OIP.AwNNE6ikJS6rzyyYLlI6iAHaEK?rs=1&pid=ImgDetMain" alt="intro" />
-          </div>
-          <h4>Freelance</h4>
-          <p>
-           Conheça nossa equipe de veterinários, Cuidadores e Adestradores qualificados, dedicados ao seu animal de estimação
-bem-estar.
-          </p>
-          <a href="#">ler Mais</a>
-        </div>
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="https://th.bing.com/th/id/OIP.AMNeVJn9iqosDV5UCO4_OAHaEK?w=960&h=540&rs=1&pid=ImgDetMain" alt="intro" />
-          </div>
-          <h4>Mapa</h4>
-          <p>
-          Onde você irá encontrar ONG´S e ABRIGOS, CASTRAMÓVEL, PONTOS DE VACINAÇÃO
-mais proximas da sua casa.
-          </p>
-          <a href="#">Ler Mais</a>
-        </div>
-        <div class="intro__card">
-          <div class="intro__image">
-            <img src="https://th.bing.com/th/id/OIP.tyfOUheOZ9ogLZ69rhRU3QHaEK?w=1920&h=1080&rs=1&pid=ImgDetMain" alt="intro" />
-          </div>
-          <h4>Contatos</h4>
-          <p>
-             Entre em Contatos direto com veterinários 24hrs, para duvidas e pequenas emergências do seu Pet .
-          </p>
-          <a href="#">Ler Mais</a>
+    <section class="section__container intro__container"> 
+      <h3 class="section__subheader">ONG'S</h3>
+     <title>Busca de ONGs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Busca de ONGs por Cidade e Bairro</h1>
+  </header>
+
+  <main>
+    <section class="add-professional">
+      <form id="searchForm">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required />
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required />
+
+        <button type="submit">Pesquisar</button>
+      </form>
+    </section>
+
+    <section class="filters hidden" id="resultados">
+      <h2>Resultados Encontrados</h2>
+      <p><strong>Total de ONGs:</strong> <span id="numOngs">0</span></p>
+      <p><strong>Denúncias registradas:</strong> <span id="numDenuncias">0</span></p>
+    </section>
+
+    <section class="freelancer-list" id="listaOngs"></section>
+  </main>
         </div>
       </div>
     </section>
@@ -207,10 +203,6 @@ Manter seu animal de estimação com a melhor aparência e sensação.
     </section>
     <section id="map"></section>
   </main>
-
-  <footer>
-    &copy; 2025 Plataforma Comunidade Pet
-  </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="scripts.js"></script>
 </body>

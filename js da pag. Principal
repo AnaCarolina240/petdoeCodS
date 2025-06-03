@@ -107,18 +107,14 @@ fleet2Content.forEach((item) => {
   fleet2.appendChild(duplicateNode);
 });
 
-// Inicializa o mapa com uma posição padrão
-const map = L.map('map').setView([-14.2350, -51.9253], 4); // Centro do Brasil
+const map = L.map('map').setView([-14.2350, -51.9253], 4);  
 
-// Adiciona camada de mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Objeto para armazenar os marcadores
 let markers = [];
 
-// Função para obter o ícone baseado no tipo
 function getIcon(type) {
   let iconUrl;
   switch (type) {
@@ -140,7 +136,6 @@ function getIcon(type) {
   });
 }
 
-// Função para carregar os dados do JSON e adicionar os marcadores
 async function loadLocations() {
   try {
     const response = await fetch('locations.json');
@@ -148,7 +143,7 @@ async function loadLocations() {
     data.forEach(loc => {
       const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
         .bindPopup(`<b>${loc.type}</b><br>${loc.name}`);
-      marker.type = loc.type; // Adiciona o tipo ao marcador
+      marker.type = loc.type; 
       marker.addTo(map);
       markers.push(marker);
     });
@@ -157,7 +152,6 @@ async function loadLocations() {
   }
 }
 
-// Função para buscar a localização baseada na cidade e estado
 async function searchLocation() {
   const city = document.getElementById('cityInput').value.trim();
   const state = document.getElementById('stateInput').value.trim();
@@ -185,7 +179,6 @@ async function searchLocation() {
   }
 }
 
-// Função para aplicar o filtro baseado nos checkboxes
 function applyFilter() {
   const checkboxes = document.querySelectorAll('.filter-checkbox');
   const selectedTypes = Array.from(checkboxes)
@@ -201,11 +194,8 @@ function applyFilter() {
   });
 }
 
-// Adiciona o evento de mudança nos checkboxes
 document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
   checkbox.addEventListener('change', applyFilter);
 });
 
-// Carrega os dados ao iniciar
 loadLocations();
-

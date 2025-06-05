@@ -211,31 +211,26 @@ Manter seu animal de estimação com a melhor aparência e sensação.
     <section class="product" id="Freelance">
       <div class="section__container product__container">
         <p class="section__subheader">Freelance</p>
-        <h2 class="section__header">Escolha uma pessoa confiavel que cuidará do seu pet.</h2>
-        <div class="product__grid">
-          <div class="product__card">
-            <img src="https://static.vecteezy.com/system/resources/previews/058/137/069/non_2x/a-man-wearing-a-plaid-shirt-and-red-pants-isolated-on-transparent-background-png.png" alt="freelancer" />
-            <h4>JOÃO</h4>
-            <p>
-              João, 32 anos, é um adestrador apaixonado que transforma a relação entre pets e tutores. Com uma abordagem positiva e técnicas eficazes, ele ensina comandos e corrige comportamentos, sempre respeitando a natureza dos animais. João acredita que o adestramento fortalece o vínculo entre o pet e seu dono, tornando cada sessão divertida e enriquecedora.
-            </p>
-            <h3>R$90.00</h3>
-          </div>
-          <div class="product__card">
-            <img src="https://esmalterianacional.com.br/wp-content/uploads/2022/03/mulher-png.png" alt="product" />
-            <h4>LARISSA</h4>
-            <p>
-             Larissa, 34 anos, é uma dedicada pet walker que adora passear com os amigos de quatro patas. Com um carinho especial por cães de todas as raças, ela garante que cada passeio seja uma aventura divertida e segura. Além de proporcionar exercícios, Larissa se preocupa em criar um vínculo de confiança com os pets, oferecendo atenção e amor em cada momento. Deixe seu bichinho sob os cuidados dela e tenha a certeza de que ele estará em boas mãos!
-            </p>
-            <h3>R$75.00</h3>
-          </div>
-          <div class="product__card">
-            <img src="https://static.vecteezy.com/system/resources/previews/041/642/170/non_2x/ai-generated-portrait-of-handsome-smiling-young-man-with-folded-arms-isolated-free-png.png" alt="freelancer" />
-            <h4>FELIPE</h4>
-            <p>
-             Felipe, 23 anos, é um pet sitter apaixonado por animais. Com experiência em cuidar de cães e gatos, ele oferece atenção, carinho e atividades divertidas para garantir que seu pet se sinta amado e seguro enquanto você está fora.
-            </p>
-            <h3>R$79.00</h3>
+      <body>
+  <header>
+    <h1>Profissionais PetDoe</h1>
+  </header>
+
+  <main>
+    <div class="filters">
+      <label for="filter">Filtrar por:</label>
+      <select id="filter">
+        <option value="all">Todos</option>
+        <option value="Pet Sitter">Pet Sitter</option>
+        <option value="Dog Walker">Dog Walker</option>
+        <option value="Adestrador">Adestrador</option>
+        <option value="Veterinário">Veterinário</option>
+      </select>
+    </div>
+
+    <div class="freelancer-list" id="freelancer-list"></div>
+  </main>
+</body>
           </div>
         </div>
       </div>

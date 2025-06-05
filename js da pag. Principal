@@ -199,3 +199,71 @@ document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
 });
 
 loadLocations();
+
+const freelancers = [
+  {
+    nome: "Maria Souza",
+    profissao: "Pet Sitter",
+    descricao: "Cuido do seu pet com amor e responsabilidade.",
+    telefone: "(81) 91234-5678",
+    avaliacao: 4.8,
+    foto: "https://i.pinimg.com/originals/df/d5/0c/dfd50c00972b6bdaec95827ce7bec3d5.jpg"
+  },
+  {
+    nome: "João Pereira",
+    profissao: "Dog Walker",
+    descricao: "Passeios divertidos e seguros para o seu cão.",
+    telefone: "(81) 99876-5432",
+    avaliacao: 4.7,
+    foto: "https://th.bing.com/th/id/R.7e05f4e20897f9d8f103003cc7faad9d?rik=uAYgZNcfqstAdw&pid=ImgRaw&r=0"
+  },
+  {
+    nome: "Ana Oliveira",
+    profissao: "Adestrador",
+    descricao: "Treino básico e avançado para cães.",
+    telefone: "(81) 98765-4321",
+    avaliacao: 4.9,
+    foto: "https://i.pinimg.com/originals/44/26/53/4426535db70cf9e5b58a6f4f7f9a98a3.jpg"
+  },
+  {
+    nome: "Carlos Lima",
+    profissao: "Veterinário",
+    descricao: "Atendimento veterinário domiciliar.",
+    telefone: "(81) 91234-5678",
+    avaliacao: 4.8,
+    foto: "https://img.freepik.com/premium-photo/male-veterinarian-holding-animals-hand-hospital_601128-3624.jpg"
+  }
+];
+
+const freelancerList = document.getElementById("freelancer-list");
+const filter = document.getElementById("filter");
+
+function renderFreelancers(lista) {
+  freelancerList.innerHTML = "";
+  lista.forEach(f => {
+    const card = document.createElement("div");
+    card.className = "freelancer-card";
+    card.innerHTML = `
+      <img src="${f.foto}" alt="${f.nome}">
+      <h3>${f.nome}</h3>
+      <p><strong>Profissão:</strong> ${f.profissao}</p>
+      <p><strong>Descrição:</strong> ${f.descricao}</p>
+      <p><strong>Telefone:</strong> ${f.telefone}</p>
+      <p class="rating">⭐ ${f.avaliacao}</p>
+      <button onclick="alert('Abrindo chat com ${f.nome}...')">Chat</button>
+    `;
+    freelancerList.appendChild(card);
+  });
+}
+
+filter.addEventListener("change", () => {
+  const value = filter.value;
+  if (value === "all") {
+    renderFreelancers(freelancers);
+  } else {
+    const filtrados = freelancers.filter(f => f.profissao === value);
+    renderFreelancers(filtrados);
+  }
+});
+
+renderFreelancers(freelancers);

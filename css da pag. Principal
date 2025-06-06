@@ -1088,7 +1088,7 @@ main {
 }
 
 .freelancer-card {
-  background-color: rgb(247, 247, 247);
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 0 10px #41b1c5;
@@ -1102,6 +1102,10 @@ main {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
+}
+.freelancer-card img {
+  display: block;
+  margin: 0 auto 10px;
 }
 
 .freelancer-card h3 {

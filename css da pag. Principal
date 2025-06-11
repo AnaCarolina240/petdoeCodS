@@ -378,6 +378,8 @@ main {
   margin-right: 15px;
 }
 
+/* Mapa */
+
 #map {
   height: 500px;
   width: 100%;
@@ -417,6 +419,9 @@ footer {
   flex: 1;
   text-align: center;
 }
+
+/* Botão voltar ao topo */
+
 .banner__container {
   padding-block: 5rem;
   overflow: hidden;
@@ -440,6 +445,7 @@ footer {
     transform: translateX(calc(-50% - 4rem));
   }
 }
+/* ------------------- */
 .about__content span {
   margin-inline: auto;
   margin-bottom: 1rem;
@@ -565,6 +571,7 @@ footer {
   display: flex;
   justify-content: center;
 }
+/* Campanha */
 
 .fleet__container {
   padding-block: 5rem;
@@ -629,6 +636,8 @@ footer {
     transform: translateX(calc(-50% - 0.5rem));
   }
 }
+/* --------------------- */
+
 .service__card div {
   margin-bottom: 2rem;
   margin-inline: auto;
@@ -949,6 +958,8 @@ main {
   padding: 10px;
 }
 
+/* freelancer */
+
 .add-professional, .filters {
   background-color: white;
   padding: 15px;
@@ -1143,6 +1154,9 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
+/* ------------------------ */
+
+/* Botão voltar ao topo */
 
 #topBtn {
   background: none;
@@ -1163,5 +1177,4 @@ footer {
   height: 200%;
   object-fit: contain;
 }
-
-
+/* --------------------- */

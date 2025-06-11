@@ -25,12 +25,11 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#ONG'S">ONG'S</a></li>
-        <li><a href="#Sobre">Sobre</a></li>
-        <li><a href="#Mapa">Mapa</a></li>
-        <li><a href="#Freelance">Freelance</a></li>
-        <li><a href="#Serviços">Serviços</a></li>
-        <li><a href="#Contatos">Contatos</a></li>
+        <li><a href="#ongs">ONGs</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+        <li><a href="#freelance">Freelance</a></li>
+        <li><a href="#servicos">Serviços</a></li>
       </ul>
     </nav>
     <header id="Voltar">
@@ -84,7 +83,7 @@ Oportunidades de freelancer e o mais importante:
           <img src="https://arquidiocese-sp.org.br/wp-content/uploads/2021/10/pexels-gabriel-p-2053815-1-scaled.jpg" alt="fleet" />
           <img src="https://georgiananesthesia.com/wp-content/uploads/iStock-992791120_res.jpg" alt="fleet" />
         </div>
-    <section class="section__container intro__container"> 
+   <section id="ongs" class="section__container">
       <h3 class="section__subheader">ONG'S</h3>
      <title>Busca de ONGs</title>
   <link rel="stylesheet" href="style.css" />
@@ -119,7 +118,9 @@ Oportunidades de freelancer e o mais importante:
       </div>
     </section>
 
-    <section class="section__container about__container" id="Sobre">
+     <!-- Sobre -->
+
+   <section id="sobre" class="section__container about__container">
       <p class="section__subheader">Sobre</p>
       <h2 class="section__header">O que temos para você</h2>
       <div class="about__row">
@@ -176,8 +177,10 @@ Manter seu animal de estimação com a melhor aparência e sensação.
       </div>
     </section>
 
+<!-- Mapa -->
+
     </section>
-    
+    <section id="mapa" class="section__container"> 
   <title>Mapa PetDoe </title>
   <link rel="stylesheet" href="styles.css" />
 
@@ -208,7 +211,9 @@ Manter seu animal de estimação com a melhor aparência e sensação.
 </body>
 </html>
 
-    <section class="product" id="Freelance">
+ <!-- Freelancers -->
+
+     <section id="freelance" class="section__container product__container">
       <div class="section__container product__container">
         <p class="section__subheader">Freelance</p>
       <body>
@@ -234,7 +239,10 @@ Manter seu animal de estimação com a melhor aparência e sensação.
           </div>
         </div>
       </div>
-    <section class="section__container service__container" id="Serviços">
+
+       <!-- Serviços -->
+
+    <section id="servicos" class="section__container service__container">
       <p class="section__subheader">Serviços</p>
       <h2 class="section__header">O que oferecemos para você</h2>
       <div class="service__flex">
@@ -271,8 +279,9 @@ Manter seu animal de estimação com a melhor aparência e sensação.
       </div>
     </section>
 
-    <section class="cliente">
-      <div class="section__container client__container">
+ <!-- Comentários -->
+
+    <section class="cliente section__container">
         <p class="section__subheader">Comentarios</p>
         <h2 class="section__header">O que falam sobre nós</h2>
         <div class="swiper">  
@@ -352,6 +361,8 @@ Manter seu animal de estimação com a melhor aparência e sensação.
       </div>
     </section>
 
+ <!-- Instagram -->
+
     <section class="section__container instagram__container">
       <p>SEGUIR</p>
       <h2 class="section__header">Instagram</h2>
@@ -362,6 +373,8 @@ Manter seu animal de estimação com a melhor aparência e sensação.
         <img src="https://th.bing.com/th/id/OIP.hD6kWXdM3AHhDjdKULoKwAHaHa?w=750&h=750&rs=1&pid=ImgDetMain" alt="instagram" />
       </div>
     </section>
+     <!-- Rodapé -->
+     
  <section class="section__container service__container" id="Contatos">
       <p class="section__subheader">Contatos</p>
     <footer id="contact">
@@ -429,4 +442,13 @@ Manter seu animal de estimação com a melhor aparência e sensação.
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
   </body>
+  <!-- Botão voltar ao topo -->
+
+<button id="topBtn" aria-label="Voltar ao topo" title="Voltar ao topo">
+  <img src="https://png.pngtree.com/png-vector/20240429/ourmid/pngtree-dog-sitting-up-with-one-paw-high-in-air-on-transparent-png-image_12342600.png" >
+</button>
+
+
+
+
 </html>

@@ -132,7 +132,40 @@ header {
   background-color: var(--white);
   z-index: -1;
 }
+.header__content {
+  padding-block: 2rem 5rem;
+  padding-inline: 1rem;
+}
 
+.header__content h1 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: 4rem;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.about__image img {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.about__content .section__description {
+  margin-block: 1rem;
+}
+
+.about__btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
 .header__container {
   padding-block: 2rem 0;
   display: grid;
@@ -220,6 +253,8 @@ header {
   max-width: 400px;
   margin-inline: auto;
 }
+
+/* -------------------------------- */
 
 img.header__image-bg {
   position: absolute;
@@ -378,7 +413,7 @@ main {
   margin-right: 15px;
 }
 
-/* Mapa */
+/* -- Mapa -- */
 
 #map {
   height: 500px;
@@ -393,9 +428,6 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
-
-
-
 
 .about__row {
   margin-top: 2rem;
@@ -419,8 +451,9 @@ footer {
   flex: 1;
   text-align: center;
 }
+/* --------------------- */
 
-/* Botão voltar ao topo */
+/* -- Rolo De Fotos Dos Animais -- */
 
 .banner__container {
   padding-block: 5rem;
@@ -446,6 +479,8 @@ footer {
   }
 }
 /* ------------------- */
+
+/* -- Sobre -- */
 .about__content span {
   margin-inline: auto;
   margin-bottom: 1rem;
@@ -489,45 +524,9 @@ footer {
   color: var(--text-light);
 }
 
-.product {
-  position: relative;
-  isolation: isolate;
-}
+/* -------------------------------------- */
 
-.product::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 65%;
-  background-color: #40cee0;
-  z-index: -1;
-}
-
-.product__grid {
-  margin-top: 4rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.product__card h4 {
-  margin-block: 1rem 5px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--text-dark);
-}
-
-.product__card p {
-  margin-bottom: 1rem;
-  color: var(--text-light);
-}
-
-.product__card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
+/* -- Serviços -- */
 
 .service__flex {
   margin-top: 4rem;
@@ -537,41 +536,30 @@ footer {
   gap: 2rem;
   flex-wrap: wrap;
 }
-.header__content {
-  padding-block: 2rem 5rem;
-  padding-inline: 1rem;
-}
-
-.header__content h1 {
+.service__card div {
   margin-bottom: 2rem;
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  text-align: center;
-  line-height: 4rem;
-}
-
-.about__container {
-  display: grid;
-  gap: 2rem;
-  overflow: hidden;
-}
-
-.about__image img {
-  max-width: 500px;
   margin-inline: auto;
-}
-
-.about__content .section__description {
-  margin-block: 1rem;
-}
-
-.about__btn {
-  margin-top: 2rem;
+  width: 120px;
+  aspect-ratio: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
+  background-color: #ff8f80;
+  border-radius: 100%;
 }
-/* Campanha */
+
+.service__card img {
+  max-width: 45px;
+}
+
+.service__card p {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* --------------------------- */
+
+/* -- Campanha -- */
 
 .fleet__container {
   padding-block: 5rem;
@@ -636,28 +624,10 @@ footer {
     transform: translateX(calc(-50% - 0.5rem));
   }
 }
+
 /* --------------------- */
 
-.service__card div {
-  margin-bottom: 2rem;
-  margin-inline: auto;
-  width: 120px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ff8f80;
-  border-radius: 100%;
-}
-
-.service__card img {
-  max-width: 45px;
-}
-
-.service__card p {
-  font-weight: 500;
-  color: var(--text-light);
-}
+/* -- Comentarios -- */
 
 .client {
   background-color: var(--primary-color);
@@ -705,6 +675,10 @@ footer {
 .client__card p {
   color: var(--text-dark);
 }
+
+/* --------------------- */
+
+/* -- Instagram -- */
 
 .instagram__container p {
   max-width: fit-content;
@@ -912,6 +886,8 @@ footer {
   .intro__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+/* --  Sobre -- */
 
   .about__row {
     flex-direction: row;

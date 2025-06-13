@@ -256,6 +256,45 @@ header {
 
 /* -------------------------------- */
 
+/* -- Mapa -- */
+
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  background-color: #ffffff;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.about__row {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.about__row:nth-child(3) {
+  margin-top: 4rem;
+}
+
+.about__image {
+  flex: 1;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.about__content {
+  flex: 1;
+  text-align: center;
+}
+
 img.header__image-bg {
   position: absolute;
   top: 50%;
@@ -411,45 +450,6 @@ main {
 
 .filter-bar label {
   margin-right: 15px;
-}
-
-/* -- Mapa -- */
-
-#map {
-  height: 500px;
-  width: 100%;
-  border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  background-color: #ffffff;
-  color: white;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-.about__row {
-  margin-top: 2rem;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.about__row:nth-child(3) {
-  margin-top: 4rem;
-}
-
-.about__image {
-  flex: 1;
-  max-width: 400px;
-  margin-inline: auto;
-}
-
-.about__content {
-  flex: 1;
-  text-align: center;
 }
 /* --------------------- */
 

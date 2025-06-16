@@ -282,5 +282,97 @@ topBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+const ongs = [
+  { 
+    nome: "ONG Esperança", cidade: "São Paulo", bairro: "Centro", denuncias: 5,
+    telefone: "(11) 98888-1234", email: "contato@ongesperanca.org"
+  },
+  { 
+    nome: "Amigos da Vida", cidade: "Rio de Janeiro", bairro: "Copacabana", denuncias: 2,
+    telefone: "(21) 99999-4321", email: "amigos@vida.org.br"
+  },
+  { 
+    nome: "Proteção Animal", cidade: "São Paulo", bairro: "Mooca", denuncias: 3,
+    telefone: "(11) 98765-4321", email: "contato@protecaoanimal.org"
+  },
+  { 
+    nome: "Ajuda Legal", cidade: "São Paulo", bairro: "Centro", denuncias: 1,
+    telefone: "(11) 91234-5678", email: "ajuda@legal.org"
+  },
+  { 
+    nome: "Cidadania Viva", cidade: "Belo Horizonte", bairro: "Savassi", denuncias: 0,
+    telefone: "(31) 99876-5432", email: "viva@cidada.org"
+  },
+
+  // ONGs em Recife
+  { 
+    nome: "Cuidar Recife", cidade: "Recife", bairro: "Boa Viagem", denuncias: 4,
+    telefone: "(81) 98888-1111", email: "contato@cuidarrecife.org"
+  },
+  { 
+    nome: "Mãos Solidárias", cidade: "Recife", bairro: "Casa Amarela", denuncias: 3,
+    telefone: "(81) 98777-2222", email: "maos@solidarias.org"
+  },
+  { 
+    nome: "Viva Recife", cidade: "Recife", bairro: "Afogados", denuncias: 2,
+    telefone: "(81) 98666-3333", email: "viva@recife.org"
+  },
+  { 
+    nome: "Recife Animal", cidade: "Recife", bairro: "Tamarineira", denuncias: 5,
+    telefone: "(81) 98555-4444", email: "contato@recifeanimal.org"
+  },
+  { 
+    nome: "Saúde e Vida", cidade: "Recife", bairro: "Imbiribeira", denuncias: 1,
+    telefone: "(81) 98444-5555", email: "saudevida@rec.org"
+  }
+];
+
+document.getElementById("searchForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const cidade = document.getElementById("cidade").value.trim().toLowerCase();
+  const bairro = document.getElementById("bairro").value.trim().toLowerCase();
+
+  const resultados = ongs.filter(ong =>
+    ong.cidade.toLowerCase() === cidade &&
+    ong.bairro.toLowerCase() === bairro
+  );
+
+  const listaOngs = document.getElementById("listaOngs");
+  const resultadosSection = document.getElementById("resultados");
+  const numOngs = document.getElementById("numOngs");
+  const numDenuncias = document.getElementById("numDenuncias");
+
+  listaOngs.innerHTML = "";
+
+  if (resultados.length > 0) {
+    let totalDenuncias = 0;
+
+    resultados.forEach(ong => {
+      totalDenuncias += ong.denuncias;
+
+      const ongDiv = document.createElement("div");
+      ongDiv.classList.add("ong");
+      ongDiv.innerHTML = `
+        <h3>${ong.nome}</h3>
+        <p><strong>Cidade:</strong> ${ong.cidade}</p>
+        <p><strong>Bairro:</strong> ${ong.bairro}</p>
+        <p><strong>Denúncias:</strong> ${ong.denuncias}</p>
+        <p><strong>Telefone:</strong> ${ong.telefone}</p>
+        <p><strong>Email:</strong> <a href="mailto:${ong.email}">${ong.email}</a></p>
+      `;
+      listaOngs.appendChild(ongDiv);
+    });
+
+    numOngs.textContent = resultados.length;
+    numDenuncias.textContent = totalDenuncias;
+    resultadosSection.classList.remove("hidden");
+  } else {
+    listaOngs.innerHTML = "<p>Nenhuma ONG encontrada.</p>";
+    numOngs.textContent = "0";
+    numDenuncias.textContent = "0";
+    resultadosSection.classList.remove("hidden");
+  }
+});
 
 

@@ -86,9 +86,7 @@ Oportunidades de freelancer e o mais importante:
 
         <!-- Ong´s -->
 
-   <section id="ongs" class="section__container">
-      <h3 class="section__subheader">ONG'S</h3>
-     <title>Busca de ONGs</title>
+   <title>Busca de ONGs</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -97,29 +95,32 @@ Oportunidades de freelancer e o mais importante:
   </header>
 
   <main>
-    <section class="add-professional">
-      <form id="searchForm">
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" required />
+    <section id="ongs" class="section__container">
+      <h3 class="section__subheader">ONG'S</h3>
 
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" required />
+      <section class="add-professional">
+        <form id="searchForm">
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required />
 
-        <button type="submit">Pesquisar</button>
-      </form>
+          <label for="bairro">Bairro:</label>
+          <input type="text" id="bairro" name="bairro" required />
+
+          <button type="submit">Pesquisar</button>
+        </form>
+      </section>
+
+      <section class="filters hidden" id="resultados">
+        <h2>Resultados Encontrados</h2>
+        <p><strong>Total de ONGs:</strong> <span id="numOngs">0</span></p>
+        <p><strong>Denúncias registradas:</strong> <span id="numDenuncias">0</span></p>
+      </section>
+
+      <section class="freelancer-list" id="listaOngs">
+        <!-- Resultados aparecerão aqui -->
+      </section>
     </section>
-
-    <section class="filters hidden" id="resultados">
-      <h2>Resultados Encontrados</h2>
-      <p><strong>Total de ONGs:</strong> <span id="numOngs">0</span></p>
-      <p><strong>Denúncias registradas:</strong> <span id="numDenuncias">0</span></p>
-    </section>
-
-    <section class="freelancer-list" id="listaOngs"></section>
   </main>
-        </div>
-      </div>
-    </section>
 
      <!-- Sobre -->
 

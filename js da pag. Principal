@@ -1,207 +1,297 @@
+// --- Funcionalidade do Menu de Navegação ---
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
+if (menuBtn && navLinks && menuBtnIcon) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("open");
+    menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+  });
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-});
+  navLinks.addEventListener("click", (e) => {
+    // Fecha apenas se um link dentro da navegação for clicado
+    if (e.target.tagName === 'A') {
+      navLinks.classList.remove("open");
+      menuBtnIcon.setAttribute("class", "ri-menu-line");
+    }
+  });
+} else {
+  console.warn("Elementos de navegação (menu-btn, nav-links ou menu-btn-icon) não encontrados. A funcionalidade de navegação pode não funcionar.");
+}
 
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
 
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
+// --- Animações ScrollReveal ---
+// Certifique-se de que ScrollReveal esteja carregado antes de tentar usá-lo
+if (typeof ScrollReveal !== 'undefined') {
+  const scrollRevealOption = {
+    distance: "50px",
+    origin: "bottom",
+    duration: 1000,
+  };
 
-ScrollReveal().reveal(".header__content h4", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".header__content h1", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".header__content h2", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".header__content p", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
-ScrollReveal().reveal(".header__btn", {
-  ...scrollRevealOption,
-  delay: 2000,
-});
+  ScrollReveal().reveal(".header__content h4", {
+    ...scrollRevealOption,
+  });
+  ScrollReveal().reveal(".header__content h1", {
+    ...scrollRevealOption,
+    delay: 500,
+  });
+  ScrollReveal().reveal(".header__content h2", {
+    ...scrollRevealOption,
+    delay: 1000,
+  });
+  ScrollReveal().reveal(".header__content p", {
+    ...scrollRevealOption,
+    delay: 1500,
+  });
 
-ScrollReveal().reveal(".intro__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
+  ScrollReveal().reveal(".header__btn", {
+    ...scrollRevealOption,
+    delay: 2000,
+  });
 
-ScrollReveal().reveal(
-  ".about__row:nth-child(3) .about__image img, .about__row:nth-child(5) .about__image img",
-  {
+  ScrollReveal().reveal(".intro__card", {
+    ...scrollRevealOption,
+    interval: 500,
+  });
+
+  // Seletores atualizados baseados na sua estrutura HTML
+  ScrollReveal().reveal(".about__row:nth-child(odd) .about__image img", {
     ...scrollRevealOption,
     origin: "left",
-  }
-);
-ScrollReveal().reveal(".about__row:nth-child(4) .about__image img", {
-  ...scrollRevealOption,
-  origin: "right",
-});
-ScrollReveal().reveal(".about__content span", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".about__content h4", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
-ScrollReveal().reveal(".about__content p", {
-  ...scrollRevealOption,
-  delay: 1500,
-});
+  });
+  ScrollReveal().reveal(".about__row:nth-child(even) .about__image img", {
+    ...scrollRevealOption,
+    origin: "right",
+  });
 
-ScrollReveal().reveal(".product__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
+  ScrollReveal().reveal(".about__content span", {
+    ...scrollRevealOption,
+    delay: 500,
+  });
+  ScrollReveal().reveal(".about__content h4", {
+    ...scrollRevealOption,
+    delay: 1000,
+  });
+  ScrollReveal().reveal(".about__content p", {
+    ...scrollRevealOption,
+    delay: 1500,
+  });
 
-ScrollReveal().reveal(".service__card", {
-  duration: 1000,
-  interval: 500,
-});
+  ScrollReveal().reveal(".product__card", {
+    ...scrollRevealOption,
+    interval: 500,
+  });
 
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
-  loop: true,
-});
+  ScrollReveal().reveal(".service__card", {
+    duration: 1000,
+    interval: 500,
+  });
 
-ScrollReveal().reveal(".instagram__grid img", {
-  duration: 1000,
-  interval: 500,
-});
+  ScrollReveal().reveal(".instagram__grid img", {
+    duration: 1000,
+    interval: 500,
+  });
+} else {
+  console.warn("Biblioteca ScrollReveal não encontrada. As animações não funcionarão.");
+}
+
+
+// --- Swiper (Carrossel de Depoimentos) ---
+// Certifique-se de que Swiper esteja carregado antes de tentar usá-lo
+if (typeof Swiper !== 'undefined') {
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1, // Padrão para 1 no celular
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000, // Reproduz slides automaticamente a cada 3 segundos
+      disableOnInteraction: false, // Continua a reprodução automática mesmo após a interação do usuário
+    },
+    // Pontos de interrupção responsivos
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+} else {
+  console.warn("Biblioteca Swiper não encontrada. O carrossel de depoimentos não funcionará.");
+}
+
+
+// --- Duplicação de Imagens da Frota/Banner para Efeito de Rolagem Infinita ---
 const fleet1 = document.querySelector(".fleet__wrapper-1 .fleet__images");
 const fleet2 = document.querySelector(".fleet__wrapper-2 .fleet__images");
 
-const fleet1Content = Array.from(fleet1.children);
-const fleet2Content = Array.from(fleet2.children);
+if (fleet1 && fleet2) {
+  const fleet1Content = Array.from(fleet1.children);
+  const fleet2Content = Array.from(fleet2.children);
 
-fleet1Content.forEach((item) => {
-  const duplicateNode = item.cloneNode(true);
-  duplicateNode.setAttribute("aria-hidden", true);
-  fleet1.appendChild(duplicateNode);
-});
-
-fleet2Content.forEach((item) => {
-  const duplicateNode = item.cloneNode(true);
-  duplicateNode.setAttribute("aria-hidden", true);
-  fleet2.appendChild(duplicateNode);
-});
-
-const map = L.map('map').setView([-14.2350, -51.9253], 4);  
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-
-let markers = [];
-
-function getIcon(type) {
-  let iconUrl;
-  switch (type) {
-    case 'Clínica Veterinária':
-      iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
-      break;
-    case 'Castramóvel':
-      iconUrl = 'https://cdn-icons-png.flaticon.com/512/3201/3201398.png';
-      break;
-    case 'Vacinação':
-      iconUrl = 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png';
-      break;
-    default:
-      iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
-  }
-  return L.icon({
-    iconUrl: iconUrl,
-    iconSize: [30, 30]
+  fleet1Content.forEach((item) => {
+    const duplicateNode = item.cloneNode(true);
+    duplicateNode.setAttribute("aria-hidden", "true"); // Para acessibilidade
+    fleet1.appendChild(duplicateNode);
   });
+
+  fleet2Content.forEach((item) => {
+    const duplicateNode = item.cloneNode(true);
+    duplicateNode.setAttribute("aria-hidden", "true"); // Para acessibilidade
+    fleet2.appendChild(duplicateNode);
+  });
+} else {
+  console.warn("Invólucros ou imagens da frota não encontrados. O efeito de rolagem infinita não funcionará.");
 }
 
-async function loadLocations() {
-  try {
-    const response = await fetch('locations.json');
-    const data = await response.json();
-    data.forEach(loc => {
-      const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
-        .bindPopup(`<b>${loc.type}</b><br>${loc.name}`);
-      marker.type = loc.type; 
-      marker.addTo(map);
-      markers.push(marker);
+
+// --- Funcionalidade do Mapa Leaflet ---
+// Certifique-se de que Leaflet esteja carregado antes de tentar usá-lo
+if (typeof L !== 'undefined') {
+  const map = L.map('map').setView([-8.0578, -34.8824], 13); // Centrado em Recife, PE, Brasil
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  let markers = [];
+
+  function getIcon(type) {
+    let iconUrl;
+    switch (type) {
+      case 'Clínica Veterinária':
+        iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
+        break;
+      case 'Castramóvel':
+        iconUrl = 'https://cdn-icons-png.flaticon.com/512/3201/3201398.png';
+        break;
+      case 'Vacinação':
+        iconUrl = 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png';
+        break;
+      default:
+        iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png'; // Padrão para ícone de veterinário
+    }
+    return L.icon({
+      iconUrl: iconUrl,
+      iconSize: [30, 30],
+      iconAnchor: [15, 30], // Ponto do ícone que corresponderá à localização do marcador
+      popupAnchor: [0, -30] // Ponto de onde o pop-up deve abrir em relação ao iconAnchor
     });
-  } catch (error) {
-    console.error('Erro ao carregar os dados:', error);
-  }
-}
-
-async function searchLocation() {
-  const city = document.getElementById('cityInput').value.trim();
-  const state = document.getElementById('stateInput').value.trim();
-
-  if (!city || !state) {
-    alert('Por favor, insira cidade e estado.');
-    return;
   }
 
-  const query = `${city}, ${state}, Brasil`;
-  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
-
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data && data.length > 0) {
-      const location = data[0];
-      map.setView([location.lat, location.lon], 13);
-    } else {
-      alert('Localização não encontrada.');
+  async function loadLocations() {
+    try {
+      const response = await fetch('locations.json');
+      if (!response.ok) {
+        // Fallback para demonstração se locations.json não estiver presente
+        console.warn("locations.json não encontrado, usando dados de exemplo para o mapa.");
+        const dummyData = [
+          { "lat": -8.0578, "lng": -34.8824, "type": "Clínica Veterinária", "name": "Clínica Pet Feliz", "city": "Recife", "state": "PE" }, // Recife
+          { "lat": -8.0650, "lng": -34.8900, "type": "Castramóvel", "name": "Castramóvel Itinerante", "city": "Recife", "state": "PE" }, // Recife
+          { "lat": -8.0500, "lng": -34.9000, "type": "Vacinação", "name": "Ponto de Vacinação PetDoe", "city": "Recife", "state": "PE" }, // Recife
+          { "lat": -23.5505, "lng": -46.6333, "type": "Clínica Veterinária", "name": "VetCenter SP", "city": "São Paulo", "state": "SP" }, // São Paulo
+          { "lat": -22.9068, "lng": -43.1729, "type": "Vacinação", "name": "Vacinação RJ", "city": "Rio de Janeiro", "state": "RJ" } // Rio de Janeiro
+        ];
+        dummyData.forEach(loc => {
+          const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
+            .bindPopup(`<b>${loc.type}</b><br>${loc.name}<br>${loc.city}, ${loc.state}`);
+          marker.type = loc.type;
+          marker.addTo(map);
+          markers.push(marker);
+        });
+        return;
+      }
+      const data = await response.json();
+      data.forEach(loc => {
+        const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
+          .bindPopup(`<b>${loc.type}</b><br>${loc.name}<br>${loc.city}, ${loc.state}`);
+        marker.type = loc.type;
+        marker.addTo(map);
+        markers.push(marker);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar os dados de localização:', error);
+      console.warn("Não foi possível carregar locations.json. Os marcadores do mapa podem estar faltando.");
     }
-  } catch (error) {
-    console.error('Erro na busca de localização:', error);
   }
-}
 
-function applyFilter() {
-  const checkboxes = document.querySelectorAll('.filter-checkbox');
-  const selectedTypes = Array.from(checkboxes)
-    .filter(checkbox => checkbox.checked)
-    .map(checkbox => checkbox.value);
+  window.searchLocation = async function() { // Expondo a função para o HTML
+    const cityInput = document.getElementById('cityInput');
+    const stateInput = document.getElementById('stateInput');
 
-  markers.forEach(marker => {
-    if (selectedTypes.includes(marker.type)) {
-      marker.addTo(map);
-    } else {
-      map.removeLayer(marker);
+    if (!cityInput || !stateInput) {
+        console.error("Elementos de entrada de cidade ou estado não encontrados.");
+        return;
     }
-  });
+
+    const city = cityInput.value.trim();
+    const state = stateInput.value.trim();
+
+    if (!city || !state) {
+      alert('Por favor, insira a cidade e o estado (UF).');
+      return;
+    }
+
+    const query = `${city}, ${state}, Brasil`;
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data && data.length > 0) {
+        const location = data[0];
+        map.setView([location.lat, location.lon], 13);
+      } else {
+        alert('Localização não encontrada. Tente um nome de cidade/estado mais específico.');
+      }
+    } catch (error) {
+      console.error('Erro na busca de localização:', error);
+      alert('Ocorreu um erro ao buscar a localização. Por favor, tente novamente.');
+    }
+  }
+
+  function applyFilter() {
+    const checkboxes = document.querySelectorAll('.filter-checkbox');
+    const selectedTypes = Array.from(checkboxes)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.value);
+
+    markers.forEach(marker => {
+      if (selectedTypes.includes(marker.type)) {
+        marker.addTo(map);
+      } else {
+        map.removeLayer(marker);
+      }
+    });
+  }
+
+  // Garante que os elementos existam antes de adicionar os ouvintes
+  const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+  if (filterCheckboxes.length > 0) {
+    filterCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', applyFilter);
+    });
+  }
+
+  // Vincula searchLocation ao clique do botão se o botão existir
+  const searchButton = document.querySelector('.search-bar button');
+  if (searchButton) {
+      searchButton.addEventListener('click', window.searchLocation); // Chama a função global
+  }
+
+  loadLocations(); // Carregamento inicial dos marcadores
+} else {
+  console.warn("Biblioteca Leaflet ou contêiner do mapa não encontrados. A funcionalidade do mapa não funcionará.");
 }
 
-document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
-  checkbox.addEventListener('change', applyFilter);
-});
 
-loadLocations();
-
-const freelancers = [
-  {
+// --- Funcionalidade de Listagem de Freelancers ---
+const freelancers = [{
     nome: "Maria Souza",
     profissao: "Pet Sitter",
     descricao: "Cuido do seu pet com amor e responsabilidade.",
@@ -232,147 +322,250 @@ const freelancers = [
     telefone: "(81) 91234-5678",
     avaliacao: 4.8,
     foto: "https://img.freepik.com/premium-photo/male-veterinarian-holding-animals-hand-hospital_601128-3624.jpg"
-  }
+  },
+  {
+    nome: "Fernanda Costa",
+    profissao: "Pet Sitter",
+    descricao: "Dedicação e carinho para seu animal de estimação.",
+    telefone: "(81) 91111-2222",
+    avaliacao: 4.6,
+    foto: "https://t3.ftcdn.net/jpg/06/07/07/49/360_F_607074900_2t3k45qj99bLqg375r3d2qG8wKk2Pq8X.jpg"
+  },
+  {
+    nome: "Pedro Rocha",
+    profissao: "Dog Walker",
+    descricao: "Caminhadas energéticas para cães de todos os portes.",
+    telefone: "(81) 93333-4444",
+    avaliacao: 4.9,
+    foto: "https://t3.ftcdn.net/jpg/04/86/61/80/360_F_486618035_oXjS7nL0f4zR1v0eG9iYl4d8fJ618eB9.jpg"
+  },
+  {
+    nome: "Mariana Dias",
+    profissao: "Adestrador",
+    descricao: "Soluções personalizadas para o comportamento do seu pet.",
+    telefone: "(81) 95555-6666",
+    avaliacao: 4.7,
+    foto: "https://t4.ftcdn.net/jpg/05/88/56/26/360_F_588562678_Fq8kSjN7hB0sH5S0c2iF1lV6j0q8x1bO.jpg"
+  },
+  {
+    nome: "Ricardo Silva",
+    profissao: "Veterinário",
+    descricao: "Saúde e bem-estar animal com atendimento especializado.",
+    telefone: "(81) 97777-8888",
+    avaliacao: 5.0,
+    foto: "https://t3.ftcdn.net/jpg/06/66/18/69/360_F_666186915_X39pM4E3L50B0gP0M8jVf4tWw9Xy5wH2.jpg"
+  },
 ];
 
 const freelancerList = document.getElementById("freelancer-list");
-const filter = document.getElementById("filter");
+const filterSelect = document.getElementById("filter");
 
 function renderFreelancers(lista) {
+  if (!freelancerList) {
+    console.error("Elemento da lista de freelancers não encontrado.");
+    return;
+  }
   freelancerList.innerHTML = "";
+  if (lista.length === 0) {
+    freelancerList.innerHTML = "<p>Nenhum profissional encontrado para este filtro.</p>";
+    return;
+  }
   lista.forEach(f => {
     const card = document.createElement("div");
     card.className = "freelancer-card";
     card.innerHTML = `
-      <img src="${f.foto}" alt="${f.nome}">
+      <img src="${f.foto}" alt="Foto de ${f.nome}">
       <h3>${f.nome}</h3>
       <p><strong>Profissão:</strong> ${f.profissao}</p>
       <p><strong>Descrição:</strong> ${f.descricao}</p>
       <p><strong>Telefone:</strong> ${f.telefone}</p>
-      <p class="rating">⭐ ${f.avaliacao}</p>
+      <p class="rating">⭐ ${f.avaliacao.toFixed(1)}</p>
       <button onclick="alert('Abrindo chat com ${f.nome}...')">Chat</button>
     `;
     freelancerList.appendChild(card);
   });
 }
 
-filter.addEventListener("change", () => {
-  const value = filter.value;
-  if (value === "all") {
-    renderFreelancers(freelancers);
-  } else {
-    const filtrados = freelancers.filter(f => f.profissao === value);
-    renderFreelancers(filtrados);
-  }
-});
+if (filterSelect) {
+  filterSelect.addEventListener("change", () => {
+    const value = filterSelect.value;
+    if (value === "all") {
+      renderFreelancers(freelancers);
+    } else {
+      const filtrados = freelancers.filter(f => f.profissao === value);
+      renderFreelancers(filtrados);
+    }
+  });
+  renderFreelancers(freelancers); // Renderização inicial
+} else {
+  console.warn("Elemento de seleção de filtro de freelancer não encontrado.");
+}
 
-renderFreelancers(freelancers);
 
+// --- Botão Voltar ao Topo ---
 const topBtn = document.getElementById('topBtn');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    topBtn.style.display = 'block';
-  } else {
-    topBtn.style.display = 'none';
-  }
-});
+if (topBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      topBtn.style.display = 'block';
+    } else {
+      topBtn.style.display = 'none';
+    }
+  });
 
-topBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+} else {
+  console.warn("Botão de voltar ao topo não encontrado.");
+}
 
-const ongs = [
-  { 
-    nome: "ONG Esperança", cidade: "São Paulo", bairro: "Centro", denuncias: 5,
-    telefone: "(11) 98888-1234", email: "contato@ongesperanca.org"
-  },
-  { 
-    nome: "Amigos da Vida", cidade: "Rio de Janeiro", bairro: "Copacabana", denuncias: 2,
-    telefone: "(21) 99999-4321", email: "amigos@vida.org.br"
-  },
-  { 
-    nome: "Proteção Animal", cidade: "São Paulo", bairro: "Mooca", denuncias: 3,
-    telefone: "(11) 98765-4321", email: "contato@protecaoanimal.org"
-  },
-  { 
-    nome: "Ajuda Legal", cidade: "São Paulo", bairro: "Centro", denuncias: 1,
-    telefone: "(11) 91234-5678", email: "ajuda@legal.org"
-  },
-  { 
-    nome: "Cidadania Viva", cidade: "Belo Horizonte", bairro: "Savassi", denuncias: 0,
-    telefone: "(31) 99876-5432", email: "viva@cidada.org"
-  },
 
-  // ONGs em Recife
-  { 
-    nome: "Cuidar Recife", cidade: "Recife", bairro: "Boa Viagem", denuncias: 4,
-    telefone: "(81) 98888-1111", email: "contato@cuidarrecife.org"
+// --- Funcionalidade de Busca de ONGs ---
+const ongs = [{
+    nome: "ONG Esperança",
+    cidade: "São Paulo",
+    bairro: "Centro",
+    denuncias: 5,
+    telefone: "(11) 98888-1234",
+    email: "contato@ongesperanca.org"
   },
-  { 
-    nome: "Mãos Solidárias", cidade: "Recife", bairro: "Casa Amarela", denuncias: 3,
-    telefone: "(81) 98777-2222", email: "maos@solidarias.org"
+  {
+    nome: "Amigos da Vida",
+    cidade: "Rio de Janeiro",
+    bairro: "Copacabana",
+    denuncias: 2,
+    telefone: "(21) 99999-4321",
+    email: "amigos@vida.org.br"
   },
-  { 
-    nome: "Viva Recife", cidade: "Recife", bairro: "Afogados", denuncias: 2,
-    telefone: "(81) 98666-3333", email: "viva@recife.org"
+  {
+    nome: "Proteção Animal",
+    cidade: "São Paulo",
+    bairro: "Mooca",
+    denuncias: 3,
+    telefone: "(11) 98765-4321",
+    email: "contato@protecaoanimal.org"
   },
-  { 
-    nome: "Recife Animal", cidade: "Recife", bairro: "Tamarineira", denuncias: 5,
-    telefone: "(81) 98555-4444", email: "contato@recifeanimal.org"
+  {
+    nome: "Ajuda Legal",
+    cidade: "São Paulo",
+    bairro: "Centro",
+    denuncias: 1,
+    telefone: "(11) 91234-5678",
+    email: "ajuda@legal.org"
   },
-  { 
-    nome: "Saúde e Vida", cidade: "Recife", bairro: "Imbiribeira", denuncias: 1,
-    telefone: "(81) 98444-5555", email: "saudevida@rec.org"
+  {
+    nome: "Cidadania Viva",
+    cidade: "Belo Horizonte",
+    bairro: "Savassi",
+    denuncias: 0,
+    telefone: "(31) 99876-5432",
+    email: "viva@cidada.org"
+  },
+  // ONGs em Recife (baseado na localização atual)
+  {
+    nome: "Cuidar Recife",
+    cidade: "Recife",
+    bairro: "Boa Viagem",
+    denuncias: 4,
+    telefone: "(81) 98888-1111",
+    email: "contato@cuidarrecife.org"
+  },
+  {
+    nome: "Mãos Solidárias",
+    cidade: "Recife",
+    bairro: "Casa Amarela",
+    denuncias: 3,
+    telefone: "(81) 98777-2222",
+    email: "maos@solidarias.org"
+  },
+  {
+    nome: "Viva Recife",
+    cidade: "Recife",
+    bairro: "Afogados",
+    denuncias: 2,
+    telefone: "(81) 98666-3333",
+    email: "viva@recife.org"
+  },
+  {
+    nome: "Recife Animal",
+    cidade: "Recife",
+    bairro: "Tamarineira",
+    denuncias: 5,
+    telefone: "(81) 98555-4444",
+    email: "contato@recifeanimal.org"
+  },
+  {
+    nome: "Saúde e Vida",
+    cidade: "Recife",
+    bairro: "Imbiribeira",
+    denuncias: 1,
+    telefone: "(81) 98444-5555",
+    email: "saudevida@rec.org"
   }
 ];
 
-document.getElementById("searchForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+const searchForm = document.getElementById("searchForm");
+const listaOngs = document.getElementById("listaOngs");
+const resultadosSection = document.getElementById("resultados");
+const numOngsSpan = document.getElementById("numOngs");
+const numDenunciasSpan = document.getElementById("numDenuncias");
 
-  const cidade = document.getElementById("cidade").value.trim().toLowerCase();
-  const bairro = document.getElementById("bairro").value.trim().toLowerCase();
+if (searchForm && listaOngs && resultadosSection && numOngsSpan && numDenunciasSpan) {
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const resultados = ongs.filter(ong =>
-    ong.cidade.toLowerCase() === cidade &&
-    ong.bairro.toLowerCase() === bairro
-  );
+    const cidadeInput = document.getElementById("cidade");
+    const bairroInput = document.getElementById("bairro");
 
-  const listaOngs = document.getElementById("listaOngs");
-  const resultadosSection = document.getElementById("resultados");
-  const numOngs = document.getElementById("numOngs");
-  const numDenuncias = document.getElementById("numDenuncias");
+    if (!cidadeInput || !bairroInput) {
+        console.error("Elementos de entrada de cidade ou bairro para busca de ONGs não encontrados.");
+        return;
+    }
 
-  listaOngs.innerHTML = "";
+    const cidade = cidadeInput.value.trim().toLowerCase();
+    const bairro = bairroInput.value.trim().toLowerCase();
 
-  if (resultados.length > 0) {
-    let totalDenuncias = 0;
+    const resultados = ongs.filter(ong =>
+      ong.cidade.toLowerCase() === cidade &&
+      ong.bairro.toLowerCase() === bairro
+    );
 
-    resultados.forEach(ong => {
-      totalDenuncias += ong.denuncias;
+    listaOngs.innerHTML = ""; // Limpa os resultados anteriores
 
-      const ongDiv = document.createElement("div");
-      ongDiv.classList.add("ong");
-      ongDiv.innerHTML = `
-        <h3>${ong.nome}</h3>
-        <p><strong>Cidade:</strong> ${ong.cidade}</p>
-        <p><strong>Bairro:</strong> ${ong.bairro}</p>
-        <p><strong>Denúncias:</strong> ${ong.denuncias}</p>
-        <p><strong>Telefone:</strong> ${ong.telefone}</p>
-        <p><strong>Email:</strong> <a href="mailto:${ong.email}">${ong.email}</a></p>
-      `;
-      listaOngs.appendChild(ongDiv);
-    });
+    if (resultados.length > 0) {
+      let totalDenuncias = 0;
 
-    numOngs.textContent = resultados.length;
-    numDenuncias.textContent = totalDenuncias;
-    resultadosSection.classList.remove("hidden");
-  } else {
-    listaOngs.innerHTML = "<p>Nenhuma ONG encontrada.</p>";
-    numOngs.textContent = "0";
-    numDenuncias.textContent = "0";
-    resultadosSection.classList.remove("hidden");
-  }
-});
+      resultados.forEach(ong => {
+        totalDenuncias += ong.denuncias;
 
+        const ongDiv = document.createElement("div");
+        ongDiv.classList.add("ong-card");
+        ongDiv.innerHTML = `
+          <h3>${ong.nome}</h3>
+          <p><strong>Cidade:</strong> ${ong.cidade}</p>
+          <p><strong>Bairro:</strong> ${ong.bairro}</p>
+          <p><strong>Denúncias:</strong> ${ong.denuncias}</p>
+          <p><strong>Telefone:</strong> ${ong.telefone}</p>
+          <p><strong>Email:</strong> <a href="mailto:${ong.email}">${ong.email}</a></p>
+        `;
+        listaOngs.appendChild(ongDiv);
+      });
 
+      numOngsSpan.textContent = resultados.length;
+      numDenunciasSpan.textContent = totalDenuncias;
+      resultadosSection.classList.remove("hidden"); // Mostra a seção de resultados
+    } else {
+      listaOngs.innerHTML = "<p>Nenhuma ONG encontrada para a cidade e bairro informados.</p>";
+      numOngsSpan.textContent = "0";
+      numDenunciasSpan.textContent = "0";
+      resultadosSection.classList.remove("hidden"); // Ainda mostra a seção para exibir "Nenhuma ONG encontrada"
+    }
+  });
+} else {
+  console.warn("Elementos de busca de ONGs (formulário, lista ou spans de resultado) não encontrados. A busca de ONGs pode não funcionar.");
+}

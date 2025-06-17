@@ -1,17 +1,33 @@
-@import url("https://th.bing.com/th/id/OIP.hKtnoisjlFhJlJyaB2WRcQAAAA?rs=1&pid=ImgDetMain");
+/* General Styles and Variables */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #40cee0;
-  --text-dark: #000000;
-  --text-light: #000000;
-  --white: #ffd75e;
-  --max-width: 1200px;
+  --primary-color: #40cee0; /* A vibrant blue/cyan, main branding color */
+  --accent-yellow: #ffd75e; /* Yellow-orange, used for navigation and footer, as per original design intent */
+  --text-dark: #000000; /* Pure black for main headings and strong text */
+  --text-light: #333333; /* Dark gray for paragraphs and less prominent text */
+  --light-gray-background: #f7f7f7; /* Very light gray for overall body background */
+  --white-background: #ffffff; /* Pure white for cards, panels, and elements that pop */
+  --red-accent: #ff6f6f; /* A soft red, used for some buttons */
+  --shadow-color: rgba(58, 175, 169, 0.3); /* Teal-ish shadow for depth */
+  --max-width: 1200px; /* Max content width */
 }
 
+/* Reset and Base Styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-gray-background);
 }
 
 .section__container {
@@ -19,7 +35,6 @@
   padding: 5rem 1rem;
   margin: auto;
 }
-
 
 .section__subheader {
   font-size: 1.2rem;
@@ -34,11 +49,13 @@
   color: var(--text-dark);
   text-align: center;
   line-height: 3.5rem;
+  margin-bottom: 2rem; /* Added spacing below headers */
 }
 
 img {
-  display: flex;
+  display: block; /* Changed from flex to block for better image rendering consistency */
   width: 100%;
+  height: auto; /* Ensure aspect ratio is maintained */
 }
 
 a {
@@ -50,15 +67,7 @@ ul {
   list-style: none;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-}
-
+/* Navigation */
 nav {
   position: fixed;
   isolation: isolate;
@@ -72,7 +81,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--white);
+  background-color: var(--accent-yellow);
 }
 
 .nav__logo a {
@@ -98,13 +107,14 @@ nav {
   justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  background-color: var(--white);
+  background-color: var(--accent-yellow);
+  transform: translateY(0); /* Default state for mobile, hidden */
   transition: transform 0.5s;
   z-index: -1;
 }
 
 .nav__links.open {
-  transform: translateY(100%);
+  transform: translateY(100%); /* Reveals nav links when 'open' class is added */
 }
 
 .nav__links a {
@@ -116,8 +126,9 @@ nav {
   color: var(--primary-color);
 }
 
+/* Header Section */
 header {
-  padding-top: 5rem;
+  padding-top: 5rem; /* Space for fixed nav */
   position: relative;
   isolation: isolate;
   background-color: var(--primary-color);
@@ -129,47 +140,19 @@ header {
   left: 0;
   width: 100%;
   height: 3rem;
-  background-color: var(--white);
+  background-color: var(--white-background);
   z-index: -1;
 }
-.header__content {
-  padding-block: 2rem 5rem;
-  padding-inline: 1rem;
-}
 
-.header__content h1 {
-  margin-bottom: 2rem;
-  font-size: 4rem;
-  font-weight: 700;
-  color: #000000;
-  text-align: center;
-  line-height: 4rem;
-}
-
-.about__container {
-  display: grid;
-  gap: 2rem;
-  overflow: hidden;
-}
-
-.about__image img {
-  max-width: 500px;
-  margin-inline: auto;
-}
-
-.about__content .section__description {
-  margin-block: 1rem;
-}
-
-.about__btn {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
 .header__container {
   padding-block: 2rem 0;
   display: grid;
   gap: 2rem;
+}
+
+.header__content {
+  padding-block: 2rem 5rem; /* This was causing extra space, adjusted */
+  padding-inline: 1rem;
 }
 
 .header__content h4 {
@@ -236,7 +219,7 @@ header {
 }
 
 .header__btn button:hover {
-  color: var(--white);
+  color: var(--white-background); /* Changed from --white to --white-background */
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -254,10 +237,7 @@ header {
   margin-inline: auto;
 }
 
-/* -------------------------------- */
-
-/* -- Campanha -- */
-
+/* Campaign (Fleet) Section */
 .fleet__container {
   padding-block: 5rem;
 }
@@ -271,6 +251,7 @@ header {
   margin-inline: auto;
   margin-bottom: 4rem;
   padding-inline: 1rem;
+  text-align: center; /* Ensures description is centered */
 }
 
 .fleet__wrapper-1 {
@@ -322,168 +303,12 @@ header {
   }
 }
 
-/* --------------------- */
-
-/* -- Sobre -- */
-
-.about__row {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .about__row:nth-child(4) {
-    flex-direction: row-reverse;
-  }
-
-  .about__image {
-    max-width: unset;
-    margin-inline: auto;
-  }
-
-  .about__content {
-    text-align: left;
-  }
-
-  .product__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer__container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-}
-
-header {
-  background-color: #26cfc7;
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  text-align: center;
-}
-
-main {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
-}
-.about__content span {
-  margin-inline: auto;
-  margin-bottom: 1rem;
-  width: 80px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-
-.about__content span img {
-  max-width: 40px;
-}
-
-.about__row:nth-child(3) .about__content span {
-  background-color: #ffbf60;
-}
-
-.about__row:nth-child(4) .about__content span {
-  background-color: #257ae7;
-}
-
-.about__row:nth-child(5) .about__content span {
-  background-color: #ff8f80;
-}
-
-.about__content h4 {
-  max-width: 450px;
-  margin-inline: auto;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 3rem;
-}
-
-.about__content p {
-  max-width: 450px;
-  margin-inline: auto;
-  color: var(--text-light);
-}
-
-/* -------------------------------------- */
-
-/* ONG´S */
-
-.add-professional, .filters {
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(58, 175, 169, 0.3);
-  margin-bottom: 20px;
-}
-
-.add-professional input,
-.add-professional textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #feb14c;
-}
-
-.add-professional button {
-  background-color: #ff6f6f;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.add-professional button:hover {
-  background-color: #ff6f6f;
-}
-
-.filters select {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
-}
-
-.freelancer-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* ---------------------- */
-
-/* -- Mapa -- */
-
-#map {
-  height: 500px;
-  width: 100%;
-  border-radius: 8px;
-}
-
-footer {
-  text-align: center;
-  background-color: #ffffff;
-  color: white;
-  padding: 10px;
-  margin-top: 20px;
-}
-
+/* About Section */
 .about__row {
   margin-top: 2rem;
   display: flex;
   gap: 2rem;
-  flex-direction: column;
+  flex-direction: column; /* Default to column for mobile */
   overflow: hidden;
 }
 
@@ -502,127 +327,167 @@ footer {
   text-align: center;
 }
 
-img.header__image-bg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  max-width: 300px !important;
-  z-index: -1;
-}
-
-.intro__grid {
-  margin-top: 4rem;
-  display: grid;
-  gap: 2rem;
-}
-
-.intro__card {
-  text-align: center;
-}
-
-.intro__card div {
-  max-width: fit-content;
+.about__content span {
   margin-inline: auto;
   margin-bottom: 1rem;
-  padding: 2rem;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 80px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
 }
 
-.intro__card:nth-child(1) div {
-  background-image: url("assets/intro-1-bg.png");
+.about__content span img {
+  max-width: 40px;
 }
 
-.intro__card:nth-child(2) div {
-  background-image: url("assets/intro-2-bg.png");
+/* Specific background colors for about icons */
+.about__row:nth-child(1) .about__content span {
+  background-color: #ffbf60; /* Adjusted for first row in HTML */
 }
 
-.intro__card:nth-child(3) div {
-  background-image: url("assets/intro-3-bg.png");
+.about__row:nth-child(2) .about__content span {
+  background-color: #257ae7; /* Adjusted for second row in HTML */
 }
 
-.intro__card div img {
-  width: unset;
-  height: 75px;
+.about__row:nth-child(3) .about__content span {
+  background-color: #ff8f80; /* Adjusted for third row in HTML */
 }
 
-.intro__card h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+.about__content h4 {
+  max-width: 450px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 3rem;
+}
+
+.about__content p {
+  max-width: 450px;
+  margin-inline: auto;
+  color: var(--text-light);
+}
+
+/* ONGs Section */
+.add-professional,
+.filters {
+  background-color: var(--white-background);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  margin-bottom: 20px;
+  text-align: center; /* Added for filters consistency */
+}
+
+.add-professional form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-professional label {
+  text-align: left;
   font-weight: 600;
   color: var(--text-dark);
 }
 
-.intro__card p {
-  margin-bottom: 2rem;
+.add-professional input,
+.add-professional textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color); /* Using variable */
+}
+
+.add-professional button {
+  background-color: var(--red-accent);
+  color: var(--white-background);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-professional button:hover {
+  background-color: var(--primary-color); /* More consistent hover */
+}
+
+.filters select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color); /* Adjusted border for filters */
+  margin: 5px; /* Added margin for spacing */
+}
+
+#listaOngs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.ong-card {
+  background-color: var(--white-background);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Default to full width for small screens */
+  max-width: 350px; /* Max width for larger cards */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ong-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.ong-card p {
+  margin-bottom: 5px;
   color: var(--text-light);
 }
 
-.intro__card a {
-  display: inline-block;
-  padding: 0.5rem 2rem;
-  border: 2px solid;
-  border-radius: 5rem;
-  transition: 0.3s;
+.ong-card p strong {
+  color: var(--text-dark);
 }
 
-.intro__card:nth-child(1) a {
-  color: #000000;
-  border-color: #ffbf60;
+.ong-card a {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
-.intro__card:nth-child(1) a:hover {
-  color: var(--black);
-  background-color: #ffbf60;
+.ong-card a:hover {
+  color: var(--red-accent);
 }
 
-.intro__card:nth-child(2) a {
-  color: #000000;
-  border-color: #257ae7;
-}
-
-.intro__card:nth-child(2) a:hover {
-  color: var(--black);
-  background-color: #257ae7;
-}
-
-.intro__card:nth-child(3) a {
-  color: #000000;
-  border-color: #ff8f80;
-}
-
-.intro__card:nth-child(3) a:hover {
-  color: var(--black);
-  background-color: #ff8f80;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-}
-
-header {
-  background-color: #40cee0;
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  text-align: center;
-}
-
-main {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
+/* Map Section */
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--shadow-color); /* Added shadow for map */
 }
 
 .controls {
-  background-color: #ffd75e
-  padding: 10px;
+  background-color: var(--accent-yellow);
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(19, 216, 206, 0.3);
-  margin-bottom: 10px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .search-bar,
@@ -631,12 +496,11 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .search-bar input {
   padding: 8px;
-  border: 1px solid #000000;
+  border: 1px solid var(--text-dark);
   border-radius: 4px;
   flex: 1;
   min-width: 120px;
@@ -644,24 +508,24 @@ main {
 
 .search-bar button {
   padding: 8px 12px;
-  background-color: #ff6f6f;
-  color: rgb(255, 255, 255);
+  background-color: var(--red-accent);
+  color: var(--white-background);
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search-bar button:hover {
-  background-color: #5dd2d6;
+  background-color: var(--primary-color);
 }
 
 .filter-bar label {
   margin-right: 15px;
+  white-space: nowrap; /* Prevent wrapping for labels */
 }
-/* --------------------- */
 
-/* -- Rolo De Fotos Dos Animais -- */
-
+/* Animal Photo Scroll (Banner) */
 .banner__container {
   padding-block: 5rem;
   overflow: hidden;
@@ -672,12 +536,12 @@ main {
   display: flex;
   align-items: center;
   gap: 8rem;
-
   animation: scroll 45s linear infinite;
 }
 
 .banner__wrapper img {
   height: 100px;
+  width: auto; /* Ensure aspect ratio */
 }
 
 @keyframes scroll {
@@ -685,10 +549,8 @@ main {
     transform: translateX(calc(-50% - 4rem));
   }
 }
-/* ------------------- */
 
-/* -- Serviços -- */
-
+/* Services Section */
 .service__flex {
   margin-top: 4rem;
   display: flex;
@@ -697,31 +559,29 @@ main {
   gap: 2rem;
   flex-wrap: wrap;
 }
+
 .service__card div {
-  margin-bottom: 2rem;
-  margin-inline: auto;
-  width: 120px;
+  margin-bottom: 1rem; /* Reduced margin */
+  width: 100px; /* Smaller icon container */
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff8f80;
+  background-color: #ff8f80; /* Specific color */
   border-radius: 100%;
 }
 
 .service__card img {
-  max-width: 45px;
+  max-width: 40px; /* Smaller icon size */
 }
 
 .service__card p {
   font-weight: 500;
   color: var(--text-light);
+  text-align: center; /* Center the text under the icon */
 }
 
-/* --------------------------- */
-
-/* -- Comentarios -- */
-
+/* Testimonials (Client) Section */
 .client {
   background-color: var(--primary-color);
 }
@@ -729,17 +589,23 @@ main {
 .swiper {
   margin-top: 4rem;
   width: 100%;
+  padding-bottom: 3rem; /* Space for pagination/navigation if added */
 }
 
 .swiper-slide {
-  min-width: 375px;
+  min-width: 300px; /* Adjusted min-width for better mobile display */
+  padding: 0 10px; /* Add some padding to see separation */
 }
 
 .client__card {
   padding: 1.5rem;
-  background-color: var(--white);
+  background-color: var(--white-background);
   border-radius: 1rem;
   transition: 0.3s;
+  height: 100%; /* Ensure cards take full height in a row */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content */
 }
 
 .client__details {
@@ -751,7 +617,9 @@ main {
 
 .client__details img {
   max-width: 50px;
+  height: 50px; /* Fixed height for consistent circles */
   border-radius: 100%;
+  object-fit: cover; /* Ensure image covers the circle */
 }
 
 .client__details h4 {
@@ -767,12 +635,10 @@ main {
 
 .client__card p {
   color: var(--text-dark);
+  flex-grow: 1; /* Allow paragraph to take available space */
 }
 
-/* --------------------- */
-
-/* -- Instagram -- */
-
+/* Instagram Section */
 .instagram__container p {
   max-width: fit-content;
   margin-bottom: 1rem;
@@ -780,20 +646,40 @@ main {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
-  background-color: #e6e3fa;
+  background-color: #e6e3fa; /* Specific color */
   border-radius: 5rem;
+  margin-inline: auto; /* Center "SEGUIR" */
 }
 
 .instagram__container .section__header {
   padding-bottom: 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--text-light);
+  text-align: center; /* Center "Instagram" */
+  border-bottom: none; /* Removed border as it looked odd centered */
+  margin-bottom: 2rem;
 }
 
 .instagram__grid {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* Added gap for grid images */
+}
+
+.instagram__grid img {
+  width: 100%;
+  height: 150px; /* Fixed height for uniform grid */
+  object-fit: cover; /* Ensure images fill their space */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: var(--accent-yellow);
+  color: var(--text-dark);
+  padding: 1rem;
+  margin-top: 20px;
 }
 
 .footer__container {
@@ -839,10 +725,12 @@ main {
   align-items: center;
   border: 2px solid var(--primary-color);
   border-radius: 5rem;
+  overflow: hidden; /* Ensure button stays inside */
 }
 
 .footer__col form input {
   padding-inline: 0.5rem;
+  padding-block: 0.5rem; /* Added vertical padding */
   width: 100%;
   outline: none;
   border: none;
@@ -852,14 +740,19 @@ main {
 }
 
 .footer__col form button {
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem 1.5rem; /* Adjusted padding */
   outline: none;
   border: none;
   color: var(--text-dark);
-  font-size: 2rem;
+  font-size: 1.5rem; /* Smaller icon size */
   background-color: var(--primary-color);
-  border-radius: 5rem;
+  border-radius: 0 5rem 5rem 0; /* Only right corners rounded */
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer__col form button:hover {
+  background-color: var(--red-accent);
 }
 
 .footer__socials {
@@ -867,6 +760,7 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center; /* Center social icons */
 }
 
 .footer__socials a {
@@ -876,6 +770,11 @@ main {
   color: var(--text-dark);
   background-color: var(--primary-color);
   border-radius: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.footer__socials a:hover {
+  background-color: var(--red-accent);
 }
 
 .footer__bar {
@@ -885,6 +784,103 @@ main {
   text-align: center;
 }
 
+/* Freelancer Section */
+.freelancer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px; /* Space from filter */
+}
+
+.freelancer-card {
+  background-color: var(--white-background);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 10px var(--primary-color);
+  width: 250px;
+  text-align: center;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.freelancer-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  display: block;
+  margin-inline: auto;
+}
+
+.freelancer-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.freelancer-card p {
+  margin: 5px 0;
+  color: var(--text-light);
+}
+
+.freelancer-card p strong {
+  color: var(--text-dark);
+}
+
+.freelancer-card .rating {
+  color: #ffcc00; /* Specific color for stars */
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.freelancer-card button {
+  background-color: var(--red-accent);
+  color: var(--white-background);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.freelancer-card button:hover {
+  background-color: var(--primary-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Back to Top Button */
+#topBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  display: none; /* Controlled by JS */
+  z-index: 1000;
+  padding: 0;
+}
+
+#topBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Media Queries */
 @media (width > 540px) {
   .header__content h1 {
     font-size: 4.5rem;
@@ -895,20 +891,20 @@ main {
     font-size: 6rem;
   }
 
-  .intro__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .instagram__grid {
     grid-template-columns: repeat(4, 1fr);
   }
 
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .swiper-slide {
+    min-width: 350px; /* Adjust for larger screens */
+  }
+
+  .ong-card {
+    width: calc(50% - 10px); /* Two cards per row with gap */
   }
 }
 
@@ -943,7 +939,7 @@ main {
     flex-direction: row;
     justify-content: flex-end;
     background-color: transparent;
-    transform: none;
+    transform: none; /* No translation for desktop */
   }
 
   header {
@@ -956,7 +952,7 @@ main {
   }
 
   .header__content {
-    grid-area: 1/2/2/3;
+    grid-area: 1/2/2/3; /* Places content on the right for desktop */
   }
 
   .header__content :is(h4, .header__btn button) {
@@ -976,185 +972,38 @@ main {
     max-width: 500px;
   }
 
-  .intro__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .about__row {
+    flex-direction: row; /* Rows for desktop */
+    align-items: center;
   }
 
-/*-------------------------------*/ 
+  .about__row:nth-child(2) {
+    flex-direction: row-reverse; /* Alternating order for second row */
+  }
 
-/* freelancer */
+  .about__content {
+    text-align: left;
+  }
 
-.freelancer-card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(58, 175, 169, 0.3);
-  width: 250px;
-  text-align: center;
-  border: 1px solid #3aafa9; 
-}
-.freelancer-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-.freelancer-card h3 {
-  margin-top: 0;
-  color: #3aafa9;
-}
+  .swiper-slide {
+    min-width: unset; /* Remove min-width, let Swiper handle it */
+  }
 
-.freelancer-card p {
-  margin: 5px 0;
-}
+  .ong-card {
+    width: calc(33.33% - 13.33px); /* Three cards per row with gap */
+  }
 
-.freelancer-card button {
-  background-color: #d6d6d6;
-  color: black;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
+  .controls {
+    flex-direction: row; /* Controls in a row for larger screens */
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.freelancer-card button:hover {
-  background-color: #5dd2d6;
+  .search-bar {
+    flex-grow: 1; /* Allow search bar to take available space */
+  }
 }
-
-footer {
-  text-align: center;
-  background-color: #ffd75e;
-  color: rgb(0, 0, 0);
-  padding: 10px;
-  margin-top: 20px;
-}
-
-.hidden {
-  display: none;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-}
-
-header {
-  background-color: #41b1c5;
-  color: rgb(0, 0, 0);
-  padding: 20px;
-  text-align: center;
-}
-
-main {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
-}
-
-.filters {
-  background-color: #ffffff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ffffff;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.filters select {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #774d4d;
-  margin: 5px;
-}
-
-.freelancer-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.freelancer-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 0 10px #41b1c5;
-  width: 250px;
-  text-align: center;
-}
-
-.freelancer-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.freelancer-card img {
-  display: block;
-  margin: 0 auto 10px;
-}
-
-.freelancer-card h3 {
-  margin-top: 0;
-  color: #000000;
-}
-
-.freelancer-card p {
-  margin: 5px 0;
-}
-
-.freelancer-card .rating {
-  color: #ffcc00;
-  font-size: 1.2em;
-}
-
-.freelancer-card button {
-  background-color: #ff6f6f;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.freelancer-card button:hover {
-  background-color: #5dd2d6;
-}
-
-footer {
-  text-align: center;
-  background-color: #ffffff;
-  color: white;
-  padding: 10px;
-  margin-top: 20px;
-}
-/* ------------------------ */
-
-/* Botão voltar ao topo */
-
-#topBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  bottom: 80px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  display: none;
-  z-index: 1000;
-  padding: 0;
-}
-
-#topBtn img {
-  width: 150%;
-  height: 200%;
-  object-fit: contain;
-}
-/* --------------------- */

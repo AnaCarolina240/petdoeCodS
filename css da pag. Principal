@@ -1,19 +1,20 @@
-/* General Styles and Variables */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #40cee0; /* A vibrant blue/cyan, main branding color */
-  --accent-yellow: #ffd75e; /* Yellow-orange, used for navigation and footer, as per original design intent */
-  --text-dark: #000000; /* Pure black for main headings and strong text */
-  --text-light: #333333; /* Dark gray for paragraphs and less prominent text */
-  --light-gray-background: #f7f7f7; /* Very light gray for overall body background */
-  --white-background: #ffffff; /* Pure white for cards, panels, and elements that pop */
-  --red-accent: #ff6f6f; /* A soft red, used for some buttons */
-  --shadow-color: rgba(58, 175, 169, 0.3); /* Teal-ish shadow for depth */
-  --max-width: 1200px; /* Max content width */
+  --primary-color: #40cee0; 
+  --accent-yellow: #ffd75e; 
+  --text-dark: #000000; 
+  --text-light: #333333; 
+  --light-gray-background: #f7f7f7; 
+  --white-background: #ffffff; 
+  --red-accent: #ff6f6f; 
+  --shadow-color: rgba(58, 175, 169, 0.3); 
+  --max-width: 1200px; /* Largura máxima do conteúdo */
 }
 
-/* Reset and Base Styles */
+/* Estilo de Redefinição e Base */
+
 * {
   padding: 0;
   margin: 0;
@@ -49,13 +50,13 @@ body {
   color: var(--text-dark);
   text-align: center;
   line-height: 3.5rem;
-  margin-bottom: 2rem; /* Added spacing below headers */
+  margin-bottom: 2rem; /* Adiciona espaçamento abaixo dos cabeçalhos */
 }
 
 img {
-  display: block; /* Changed from flex to block for better image rendering consistency */
+  display: block; 
   width: 100%;
-  height: auto; /* Ensure aspect ratio is maintained */
+  height: auto; /* Certifica de que a proporção seja mantida */
 }
 
 a {
@@ -67,7 +68,8 @@ ul {
   list-style: none;
 }
 
-/* Navigation */
+/* Navegação */
+
 nav {
   position: fixed;
   isolation: isolate;
@@ -108,13 +110,13 @@ nav {
   flex-direction: column;
   gap: 2rem;
   background-color: var(--accent-yellow);
-  transform: translateY(0); /* Default state for mobile, hidden */
+  transform: translateY(0); /* Estado padrão para celular, oculto */
   transition: transform 0.5s;
   z-index: -1;
 }
 
 .nav__links.open {
-  transform: translateY(100%); /* Reveals nav links when 'open' class is added */
+  transform: translateY(100%); /* Revela os links de navegação quando a classe 'open' é adicionada */
 }
 
 .nav__links a {
@@ -126,9 +128,10 @@ nav {
   color: var(--primary-color);
 }
 
-/* Header Section */
+/* Seção de Cabeçalho */
+
 header {
-  padding-top: 5rem; /* Space for fixed nav */
+  padding-top: 5rem; /* Espaço para navegação fixa */
   position: relative;
   isolation: isolate;
   background-color: var(--primary-color);
@@ -151,7 +154,7 @@ header {
 }
 
 .header__content {
-  padding-block: 2rem 5rem; /* This was causing extra space, adjusted */
+  padding-block: 2rem 5rem; 
   padding-inline: 1rem;
 }
 
@@ -219,7 +222,7 @@ header {
 }
 
 .header__btn button:hover {
-  color: var(--white-background); /* Changed from --white to --white-background */
+  color: var(--white-background); /* Mudado de --branco para --fundo-branco */
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -237,7 +240,8 @@ header {
   margin-inline: auto;
 }
 
-/* Campaign (Fleet) Section */
+/* Seção de Campanha */
+
 .fleet__container {
   padding-block: 5rem;
 }
@@ -251,7 +255,7 @@ header {
   margin-inline: auto;
   margin-bottom: 4rem;
   padding-inline: 1rem;
-  text-align: center; /* Ensures description is centered */
+  text-align: center; /* Garante que a descrição esteja centralizada */
 }
 
 .fleet__wrapper-1 {
@@ -303,12 +307,13 @@ header {
   }
 }
 
-/* About Section */
+/* Seção Sobre */
+
 .about__row {
   margin-top: 2rem;
   display: flex;
   gap: 2rem;
-  flex-direction: column; /* Default to column for mobile */
+  flex-direction: column; /* Define como coluna padrão para mobile */
   overflow: hidden;
 }
 
@@ -342,17 +347,18 @@ header {
   max-width: 40px;
 }
 
-/* Specific background colors for about icons */
+/* Cores de fundo específicas para ícones de informações */
+
 .about__row:nth-child(1) .about__content span {
-  background-color: #ffbf60; /* Adjusted for first row in HTML */
+  background-color: #ffbf60; /* Ajusta para a primeira linha em HTML */
 }
 
 .about__row:nth-child(2) .about__content span {
-  background-color: #257ae7; /* Adjusted for second row in HTML */
+  background-color: #40cee0; /* Ajusta para a segunda linha em HTML */
 }
 
 .about__row:nth-child(3) .about__content span {
-  background-color: #ff8f80; /* Adjusted for third row in HTML */
+  background-color: #ff8f80; /* Ajusta para a terceira linha em HTML */
 }
 
 .about__content h4 {
@@ -371,7 +377,10 @@ header {
   color: var(--text-light);
 }
 
-/* ONGs Section */
+
+
+/* Seção de ONGs */
+
 .add-professional,
 .filters {
   background-color: var(--white-background);
@@ -379,7 +388,7 @@ header {
   border-radius: 8px;
   box-shadow: 0 0 10px var(--shadow-color);
   margin-bottom: 20px;
-  text-align: center; /* Added for filters consistency */
+  text-align: center; /* Adiciona para consistência dos filtros */
 }
 
 .add-professional form {
@@ -401,29 +410,34 @@ header {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid var(--primary-color); /* Using variable */
+  border: 1px solid var(--primary-color); /* Uso de variável */
 }
 
 .add-professional button {
   background-color: var(--red-accent);
   color: var(--white-background);
   border: none;
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
+.add-professional button {
+  width: fit-content; /* Ou algo como 150px */
+  margin: 0 auto;      /* Centraliza o botão se ele não for 100% */
+}
+
 .add-professional button:hover {
-  background-color: var(--primary-color); /* More consistent hover */
+  background-color: var(--primary-color); 
 }
 
 .filters select {
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid var(--primary-color); /* Adjusted border for filters */
-  margin: 5px; /* Added margin for spacing */
+  border: 1px solid var(--primary-color); /* Borda ajustada para filtros */
+  margin: 5px; /* Adiciona margem para espaçamento */
 }
 
 #listaOngs {
@@ -439,8 +453,8 @@ header {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Default to full width for small screens */
-  max-width: 350px; /* Max width for larger cards */
+  width: 100%; /* Define como largura total para telas pequenas */
+  max-width: 350px; /* Largura máxima para cartões maiores */
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -471,12 +485,13 @@ header {
   color: var(--red-accent);
 }
 
-/* Map Section */
+/* Seção do Mapa */
+
 #map {
   height: 500px;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 0 10px var(--shadow-color); /* Added shadow for map */
+  box-shadow: 0 0 10px var(--shadow-color); /* Sombra adicionada ao mapa */
 }
 
 .controls {
@@ -522,10 +537,10 @@ header {
 
 .filter-bar label {
   margin-right: 15px;
-  white-space: nowrap; /* Prevent wrapping for labels */
+  white-space: nowrap; /* Impedir a quebra para rótulos */
 }
 
-/* Animal Photo Scroll (Banner) */
+/* Rolagem de Fotos de Animais (Banner) */
 .banner__container {
   padding-block: 5rem;
   overflow: hidden;
@@ -541,7 +556,7 @@ header {
 
 .banner__wrapper img {
   height: 100px;
-  width: auto; /* Ensure aspect ratio */
+  width: auto; /* Manter a proporção */
 }
 
 @keyframes scroll {
@@ -550,7 +565,8 @@ header {
   }
 }
 
-/* Services Section */
+/* Seção de Serviços */
+
 .service__flex {
   margin-top: 4rem;
   display: flex;
@@ -561,27 +577,37 @@ header {
 }
 
 .service__card div {
-  margin-bottom: 1rem; /* Reduced margin */
-  width: 100px; /* Smaller icon container */
+  margin-bottom: 1rem; /* Reduzir margem */
+  width: 100px; /* Container de ícone menor */
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff8f80; /* Specific color */
+  background-color: #ff8f80; /* Cor específica */
   border-radius: 100%;
 }
 
 .service__card img {
-  max-width: 40px; /* Smaller icon size */
+  max-width: 40px; /* Tamanho menor do ícone */
 }
+
+.service__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 
 .service__card p {
   font-weight: 500;
   color: var(--text-light);
-  text-align: center; /* Center the text under the icon */
+  text-align: center; /* Centraliza o texto abaixo do ícone */
 }
 
-/* Testimonials (Client) Section */
+/* Comentarios */
+
 .client {
   background-color: var(--primary-color);
 }
@@ -589,23 +615,23 @@ header {
 .swiper {
   margin-top: 4rem;
   width: 100%;
-  padding-bottom: 3rem; /* Space for pagination/navigation if added */
+  padding-bottom: 3rem; /* Espaço para pagina, se adicionado */
 }
 
 .swiper-slide {
-  min-width: 300px; /* Adjusted min-width for better mobile display */
-  padding: 0 10px; /* Add some padding to see separation */
+  min-width: 300px; /* Largura mínima ajustada para  exibição em dispositivos */
+  padding: 0 10px; /* Adiciona um pouco de espaçamento para ver a separação */
 }
 
 .client__card {
   padding: 1.5rem;
-  background-color: var(--white-background);
+  background-color: #ffd75e;
   border-radius: 1rem;
   transition: 0.3s;
-  height: 100%; /* Ensure cards take full height in a row */
+  height: 100%; /* Certifique-se de que os cards ocupem toda a altura em uma linha */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute content */
+  justify-content: space-between; /* Distribui conteúdo */
 }
 
 .client__details {
@@ -617,9 +643,9 @@ header {
 
 .client__details img {
   max-width: 50px;
-  height: 50px; /* Fixed height for consistent circles */
+  height: 50px; /* Altura fixa para círculos consistentes */
   border-radius: 100%;
-  object-fit: cover; /* Ensure image covers the circle */
+  object-fit: cover; /* Certifica de que a imagem cubra o círculo */
 }
 
 .client__details h4 {
@@ -635,10 +661,11 @@ header {
 
 .client__card p {
   color: var(--text-dark);
-  flex-grow: 1; /* Allow paragraph to take available space */
+  flex-grow: 1; /* Permiti que o parágrafo ocupe o espaço disponível */
 }
 
-/* Instagram Section */
+/* Seção do Instagram */
+
 .instagram__container p {
   max-width: fit-content;
   margin-bottom: 1rem;
@@ -646,15 +673,15 @@ header {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
-  background-color: #e6e3fa; /* Specific color */
+  background-color: #ffd75e; /* Cor específica */
   border-radius: 5rem;
-  margin-inline: auto; /* Center "SEGUIR" */
+  margin-inline: auto; /* Centro "SEGUIR" */
 }
 
 .instagram__container .section__header {
   padding-bottom: 1rem;
-  text-align: center; /* Center "Instagram" */
-  border-bottom: none; /* Removed border as it looked odd centered */
+  text-align: center; /* Centro "Instagram" */
+  border-bottom: none; /* Removi a borda pois parecia estranha centralizada */
   margin-bottom: 2rem;
 }
 
@@ -662,18 +689,19 @@ header {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem; /* Added gap for grid images */
+  gap: 1rem; /* Adicionado espaço para imagens de grade */
 }
 
 .instagram__grid img {
   width: 100%;
-  height: 150px; /* Fixed height for uniform grid */
-  object-fit: cover; /* Ensure images fill their space */
+  height: 150px; /* Altura fixa para grade uniforme */
+  object-fit: cover; /* Certifique-se de que as imagens preencham seu espaço */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* Rodapé */
+
 footer {
   text-align: center;
   background-color: var(--accent-yellow);
@@ -725,12 +753,12 @@ footer {
   align-items: center;
   border: 2px solid var(--primary-color);
   border-radius: 5rem;
-  overflow: hidden; /* Ensure button stays inside */
+  overflow: hidden; /* Certifique-se de que o botão permaneça dentro */
 }
 
 .footer__col form input {
   padding-inline: 0.5rem;
-  padding-block: 0.5rem; /* Added vertical padding */
+  padding-block: 0.5rem; /* Adicionou preenchimento vertical */
   width: 100%;
   outline: none;
   border: none;
@@ -740,13 +768,13 @@ footer {
 }
 
 .footer__col form button {
-  padding: 0.5rem 1.5rem; /* Adjusted padding */
+  padding: 0.5rem 1.5rem; /* Reforço de preenchimento */
   outline: none;
   border: none;
   color: var(--text-dark);
-  font-size: 1.5rem; /* Smaller icon size */
+  font-size: 1.5rem; /* Tamanho menor do ícone */
   background-color: var(--primary-color);
-  border-radius: 0 5rem 5rem 0; /* Only right corners rounded */
+  border-radius: 0 5rem 5rem 0; /* Somente os cantos direitos arredondados */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -760,7 +788,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: center; /* Center social icons */
+  justify-content: center; /* Ícones sociais do centro */
 }
 
 .footer__socials a {
@@ -784,13 +812,14 @@ footer {
   text-align: center;
 }
 
-/* Freelancer Section */
+/* Seção de Freelancer */
+
 .freelancer-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px; /* Space from filter */
+  margin-top: 20px; /* Espaço do filtro */
 }
 
 .freelancer-card {
@@ -833,7 +862,7 @@ footer {
 }
 
 .freelancer-card .rating {
-  color: #ffcc00; /* Specific color for stars */
+  color: #ffcc00; /* Cor específica para estrelas */
   font-size: 1.2em;
   margin-top: 10px;
   margin-bottom: 15px;
@@ -859,7 +888,8 @@ footer {
   display: none;
 }
 
-/* Back to Top Button */
+/* Botão Voltar ao Topo */
+
 #topBtn {
   background: none;
   border: none;
@@ -869,18 +899,19 @@ footer {
   right: 40px;
   width: 60px;
   height: 60px;
-  display: none; /* Controlled by JS */
+  display: none; /* Controlado por JS */
   z-index: 1000;
   padding: 0;
 }
 
 #topBtn img {
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   object-fit: contain;
 }
 
-/* Media Queries */
+/* Consultas de Mídia */
+
 @media (width > 540px) {
   .header__content h1 {
     font-size: 4.5rem;
@@ -900,11 +931,11 @@ footer {
   }
 
   .swiper-slide {
-    min-width: 350px; /* Adjust for larger screens */
+    min-width: 350px; /* Ajustar para telas maiores */
   }
 
   .ong-card {
-    width: calc(50% - 10px); /* Two cards per row with gap */
+    width: calc(50% - 10px); /* Dois cartões por linha com espaço */
   }
 }
 
@@ -939,7 +970,7 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
     background-color: transparent;
-    transform: none; /* No translation for desktop */
+    transform: none; /* Nenhuma tradução para desktop */
   }
 
   header {
@@ -952,7 +983,7 @@ footer {
   }
 
   .header__content {
-    grid-area: 1/2/2/3; /* Places content on the right for desktop */
+    grid-area: 1/2/2/3; /* Coloca o conteúdo à direita para desktop */
   }
 
   .header__content :is(h4, .header__btn button) {
@@ -973,12 +1004,12 @@ footer {
   }
 
   .about__row {
-    flex-direction: row; /* Rows for desktop */
+    flex-direction: row; /*Linhas para desktop*/
     align-items: center;
   }
 
   .about__row:nth-child(2) {
-    flex-direction: row-reverse; /* Alternating order for second row */
+    flex-direction: row-reverse; /* Ordem alternada para a segunda linha */
   }
 
   .about__content {
@@ -990,15 +1021,15 @@ footer {
   }
 
   .swiper-slide {
-    min-width: unset; /* Remove min-width, let Swiper handle it */
+    min-width: unset; /* Remova a largura mínima, deixe o Swiper lidar com isso. */
   }
 
   .ong-card {
-    width: calc(33.33% - 13.33px); /* Three cards per row with gap */
+    width: calc(33.33% - 13.33px); /* Três cartões por linha com espaço */
   }
 
   .controls {
-    flex-direction: row; /* Controls in a row for larger screens */
+    flex-direction: row; /* Controles em linha para telas maiores */
     justify-content: space-between;
     align-items: center;
   }

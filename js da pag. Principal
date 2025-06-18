@@ -329,7 +329,7 @@ const freelancers = [{
     descricao: "Dedicação e carinho para seu animal de estimação.",
     telefone: "(81) 91111-2222",
     avaliacao: 4.6,
-    foto: "https://t3.ftcdn.net/jpg/06/07/07/49/360_F_607074900_2t3k45qj99bLqg375r3d2qG8wKk2Pq8X.jpg"
+    foto: "https://img.freepik.com/premium-photo/emotional-dynamic-pose-30-year-old-woman_731930-16733.jpg"
   },
   {
     nome: "Pedro Rocha",
@@ -337,7 +337,7 @@ const freelancers = [{
     descricao: "Caminhadas energéticas para cães de todos os portes.",
     telefone: "(81) 93333-4444",
     avaliacao: 4.9,
-    foto: "https://t3.ftcdn.net/jpg/04/86/61/80/360_F_486618035_oXjS7nL0f4zR1v0eG9iYl4d8fJ618eB9.jpg"
+    foto: "https://th.bing.com/th/id/OIP.I5aOwQflNZTu46PItLEGwgHaHa?rs=1&pid=ImgDetMain&cb=idpwebpc2"
   },
   {
     nome: "Mariana Dias",
@@ -345,7 +345,7 @@ const freelancers = [{
     descricao: "Soluções personalizadas para o comportamento do seu pet.",
     telefone: "(81) 95555-6666",
     avaliacao: 4.7,
-    foto: "https://t4.ftcdn.net/jpg/05/88/56/26/360_F_588562678_Fq8kSjN7hB0sH5S0c2iF1lV6j0q8x1bO.jpg"
+    foto: "https://292aa00292a014763d1b-96a84504aed2b25fc1239be8d2b61736.ssl.cf1.rackcdn.com/GaleriaImagem/129397/foto-de-perfil-profissional-feminino_luciana-ribeiro-4.jpg"
   },
   {
     nome: "Ricardo Silva",
@@ -353,7 +353,7 @@ const freelancers = [{
     descricao: "Saúde e bem-estar animal com atendimento especializado.",
     telefone: "(81) 97777-8888",
     avaliacao: 5.0,
-    foto: "https://t3.ftcdn.net/jpg/06/66/18/69/360_F_666186915_X39pM4E3L50B0gP0M8jVf4tWw9Xy5wH2.jpg"
+    foto: "https://img.freepik.com/premium-photo/portrait-veterinarian-doctor-holding-kitten-veterinary-clinic_222237-1986.jpg"
   },
 ];
 

@@ -150,144 +150,86 @@ if (fleet1 && fleet2) {
 
 
 // --- Funcionalidade do Mapa Leaflet ---
-// Certifique-se de que Leaflet esteja carregado antes de tentar usá-lo
-if (typeof L !== 'undefined') {
-  const map = L.map('map').setView([-8.0578, -34.8824], 13); // Centrado em Recife, PE, Brasil
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+const map = L.map('map').setView([-8.05, -34.9], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-  let markers = [];
+const clinicIcon = L.icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/616/616408.png',
+  iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
+});
+const vaccineIcon = L.icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/809/809957.png',
+  iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
+});
+const castraIcon = L.icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/2966/2966489.png',
+  iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
+});
 
-  function getIcon(type) {
-    let iconUrl;
-    switch (type) {
-      case 'Clínica Veterinária':
-        iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png';
-        break;
-      case 'Castramóvel':
-        iconUrl = 'https://cdn-icons-png.flaticon.com/512/3201/3201398.png';
-        break;
-      case 'Vacinação':
-        iconUrl = 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png';
-        break;
-      default:
-        iconUrl = 'https://cdn-icons-png.flaticon.com/512/616/616408.png'; // Padrão para ícone de veterinário
-    }
-    return L.icon({
-      iconUrl: iconUrl,
-      iconSize: [30, 30],
-      iconAnchor: [15, 30], // Ponto do ícone que corresponderá à localização do marcador
-      popupAnchor: [0, -30] // Ponto de onde o pop-up deve abrir em relação ao iconAnchor
-    });
-  }
-
-  async function loadLocations() {
-    try {
-      const response = await fetch('locations.json');
-      if (!response.ok) {
-        // Fallback para demonstração se locations.json não estiver presente
-        console.warn("locations.json não encontrado, usando dados de exemplo para o mapa.");
-        const dummyData = [
-          { "lat": -8.0578, "lng": -34.8824, "type": "Clínica Veterinária", "name": "Clínica Pet Feliz", "city": "Recife", "state": "PE" }, // Recife
-          { "lat": -8.0650, "lng": -34.8900, "type": "Castramóvel", "name": "Castramóvel Itinerante", "city": "Recife", "state": "PE" }, // Recife
-          { "lat": -8.0500, "lng": -34.9000, "type": "Vacinação", "name": "Ponto de Vacinação PetDoe", "city": "Recife", "state": "PE" }, // Recife
-          { "lat": -23.5505, "lng": -46.6333, "type": "Clínica Veterinária", "name": "VetCenter SP", "city": "São Paulo", "state": "SP" }, // São Paulo
-          { "lat": -22.9068, "lng": -43.1729, "type": "Vacinação", "name": "Vacinação RJ", "city": "Rio de Janeiro", "state": "RJ" } // Rio de Janeiro
-        ];
-        dummyData.forEach(loc => {
-          const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
-            .bindPopup(`<b>${loc.type}</b><br>${loc.name}<br>${loc.city}, ${loc.state}`);
-          marker.type = loc.type;
-          marker.addTo(map);
-          markers.push(marker);
-        });
-        return;
-      }
-      const data = await response.json();
-      data.forEach(loc => {
-        const marker = L.marker([loc.lat, loc.lng], { icon: getIcon(loc.type) })
-          .bindPopup(`<b>${loc.type}</b><br>${loc.name}<br>${loc.city}, ${loc.state}`);
-        marker.type = loc.type;
-        marker.addTo(map);
-        markers.push(marker);
-      });
-    } catch (error) {
-      console.error('Erro ao carregar os dados de localização:', error);
-      console.warn("Não foi possível carregar locations.json. Os marcadores do mapa podem estar faltando.");
-    }
-  }
-
-  window.searchLocation = async function() { // Expondo a função para o HTML
-    const cityInput = document.getElementById('cityInput');
-    const stateInput = document.getElementById('stateInput');
-
-    if (!cityInput || !stateInput) {
-        console.error("Elementos de entrada de cidade ou estado não encontrados.");
-        return;
-    }
-
-    const city = cityInput.value.trim();
-    const state = stateInput.value.trim();
-
-    if (!city || !state) {
-      alert('Por favor, insira a cidade e o estado (UF).');
-      return;
-    }
-
-    const query = `${city}, ${state}, Brasil`;
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-
-      if (data && data.length > 0) {
-        const location = data[0];
-        map.setView([location.lat, location.lon], 13);
-      } else {
-        alert('Localização não encontrada. Tente um nome de cidade/estado mais específico.');
-      }
-    } catch (error) {
-      console.error('Erro na busca de localização:', error);
-      alert('Ocorreu um erro ao buscar a localização. Por favor, tente novamente.');
-    }
-  }
-
-  function applyFilter() {
-    const checkboxes = document.querySelectorAll('.filter-checkbox');
-    const selectedTypes = Array.from(checkboxes)
-      .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.value);
-
-    markers.forEach(marker => {
-      if (selectedTypes.includes(marker.type)) {
-        marker.addTo(map);
-      } else {
-        map.removeLayer(marker);
-      }
-    });
-  }
-
-  // Garante que os elementos existam antes de adicionar os ouvintes
-  const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
-  if (filterCheckboxes.length > 0) {
-    filterCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', applyFilter);
-    });
-  }
-
-  // Vincula searchLocation ao clique do botão se o botão existir
-  const searchButton = document.querySelector('.search-bar button');
-  if (searchButton) {
-      searchButton.addEventListener('click', window.searchLocation); // Chama a função global
-  }
-
-  loadLocations(); // Carregamento inicial dos marcadores
-} else {
-  console.warn("Biblioteca Leaflet ou contêiner do mapa não encontrados. A funcionalidade do mapa não funcionará.");
+async function geocode(city, state) {
+  const q = `${city}, ${state}, Brasil`;
+  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
+  const resp = await fetch(url);
+  const results = await resp.json();
+  return results[0] ? [parseFloat(results[0].lat), parseFloat(results[0].lon)] : null;
 }
+
+async function fetchData(lat, lon) {
+  return {
+    clinics: [
+      { name: 'Clínica Animal Med', lat: lat - 0.06, lng: lon - 0.01 },
+      { name: 'Animal Vet Center', lat: lat - 0.07, lng: lon - 0.02 }
+    ],
+    vaccines: [
+      { name: 'Hospital Veterinário Recife (Cordeiro)', lat: lat + 0.01, lng: lon + 0.01 },
+      { name: 'CVA Peixinhos', lat: lat + 0.02, lng: lon + 0.02 }
+    ],
+    castram: [
+      { name: 'CãoPaz Compaz Eduardo Campos', lat: lat + 0.015, lng: lon - 0.005 }
+    ]
+  };
+}
+
+function updateMap(data) {
+  map.eachLayer(layer => {
+    if (layer.options && layer.options.pane === 'markerPane') map.removeLayer(layer);
+  });
+
+  data.clinics.forEach(p =>
+    L.marker([p.lat, p.lng], { icon: clinicIcon })
+      .bindPopup(`<strong>${p.name}</strong><br>Clínica veterinária`)
+      .addTo(map)
+  );
+  data.vaccines.forEach(p =>
+    L.marker([p.lat, p.lng], { icon: vaccineIcon })
+      .bindPopup(`<strong>${p.name}</strong><br>Vacinação antirrábica`)
+      .addTo(map)
+  );
+  data.castram.forEach(p =>
+    L.marker([p.lat, p.lng], { icon: castraIcon })
+      .bindPopup(`<strong>${p.name}</strong><br>Castramóvel / Evento`)
+      .addTo(map)
+  );
+}
+
+document.getElementById('search-btn').addEventListener('click', async () => {
+  const city = document.getElementById('city-input').value.trim();
+  const state = document.getElementById('state-input').value.trim();
+  if (!city || !state) return alert('Informe cidade e estado');
+
+  const coords = await geocode(city, state);
+  if (!coords) return alert('Local não encontrado');
+
+  const [lat, lon] = coords;
+  map.setView([lat, lon], 13);
+
+  const data = await fetchData(lat, lon);
+  updateMap(data);
+});
+
 
 
 // --- Funcionalidade de Listagem de Freelancers ---

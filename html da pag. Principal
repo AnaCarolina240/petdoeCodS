@@ -162,75 +162,45 @@
 
     ---
 
-    <section id="sobre" class="section__container about__container">
+   <section class="section__container about__container" id="Sobre">
       <p class="section__subheader">Sobre</p>
       <h2 class="section__header">O que temos para você</h2>
       <div class="about__row">
         <div class="about__image">
-          <img
-            src="https://caesegatos.vet.br/wp-content/uploads/2022/02/servicosHome.webp"
-            alt="Veterinário examinando cão"
-          />
+          <img src="https://caesegatos.vet.br/wp-content/uploads/2022/02/servicosHome.webp" alt="about" />
         </div>
         <div class="about__content">
-          <span>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2138/2138508.png"
-              alt="Ícone de primeiros socorros"
-            />
-          </span>
+          <span><img src="https://cdn-icons-png.flaticon.com/512/2138/2138508.png" alt="about-icon" /></span>
           <h4>Ajudas de emergência para seu pet</h4>
           <p>
-            Temos veterinários especializados 24hrs aqui para fornecer cuidados
-            rápidos com orientações para que seu pet permaneça em perfeita
-            saúde.
+            Temos veterinários especializados 24hrs aqui para fornecer cuidados rapidos com
+orientações para que seu pet permaneça em perfeita saúde.
           </p>
         </div>
       </div>
       <div class="about__row">
         <div class="about__image">
-          <img
-            src="https://dotopet.com.br/wp-content/uploads/2024/01/pet-sitter.png"
-            alt="Mulher brincando com cachorro"
-          />
+          <img src="https://dotopet.com.br/wp-content/uploads/2024/01/pet-sitter.png" alt="about" />
         </div>
         <div class="about__content">
-          <span>
-            <img
-              src="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-pet-sitting-clipart-woman-sitting-with-her-dog-and-plant-cartoon-vector-png-image_6863723.png"
-              alt="Ícone de pet sitter"
-            />
-          </span>
-          <h4>Pet sitters, Adestradores e veterinários</h4>
+          <span><img src="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-pet-sitting-clipart-woman-sitting-with-her-dog-and-plant-cartoon-vector-png-image_6863723.png" alt="about-icon" /></span>
+          <h4>pet sitters, Adestradores e veterinários</h4>
           <p>
-            Aqui, você encontrará profissionais qualificados prontos para
-            cuidar, adestrar e proporcionar o melhor bem-estar para os seus
-            pets. Seja você um tutor em busca de cuidados especiais, um
-            adestrador em busca de novos clientes ou um veterinário querendo se
-            conectar com amantes de animais, estamos aqui para facilitar essa
-            conexão.
+            Aqui, você encontrará profissionais qualificados prontos para cuidar, adestrar e proporcionar o melhor bem-estar para os seus pets. Seja você um tutor em busca de cuidados especiais, um adestrador em busca de novos clientes ou um veterinário querendo se conectar com amantes de animais, estamos aqui para facilitar essa conexão. 
           </p>
         </div>
       </div>
+    </section>
       <div class="about__row">
         <div class="about__image">
-          <img
-            src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-wellness-dog-beauty-photo-png-image_13313234.png"
-            alt="Cachorro sendo cuidado"
-          />
+          <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-wellness-dog-beauty-photo-png-image_13313234.png" alt="about" />
         </div>
         <div class="about__content">
-          <span>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/7965/7965939.png"
-              alt="Ícone de banho e tosa"
-            />
-          </span>
+          <span><img src="https://cdn-icons-png.flaticon.com/512/7965/7965939.png" alt="about-icon" /></span>
           <h4>Deixe-nos cuidar do seu precioso e amado animal de estimação</h4>
           <p>
-            Do banho ao estilo, oferecemos serviços profissionais de higiene
-            para manter seu animal de estimação com a melhor aparência e
-            sensação.
+            Do banho ao estilo, oferecemos serviços profissionais de higiene para
+Manter seu animal de estimação com a melhor aparência e sensação.
           </p>
         </div>
       </div>
@@ -285,54 +255,42 @@
 
     ---
 
-    <section id="mapa" class="section__container">
-      <h3 class="section__subheader">Mapa</h3>
-      <h2 class="section__header">Encontre serviços PetDoe perto de você</h2>
+    <title>Mapa de Serviços Veterinários – PetDoe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mapa</h1>
+    <h2>Encontre serviços PetDoe perto de você</h2>
+  </header>
 
-      <main>
-        <section class="controls">
-          <div class="search-bar">
-            <input type="text" id="cityInput" placeholder="Digite a cidade" />
-            <input
-              type="text"
-              id="stateInput"
-              placeholder="Digite o estado (UF)"
-            />
-            <button onclick="searchLocation()">Buscar</button>
-          </div>
-          <div class="filter-bar">
-            <label
-              ><input
-                type="checkbox"
-                class="filter-checkbox"
-                value="Clínica Veterinária"
-                checked
-              />
-              Clínica Veterinária</label
-            >
-            <label
-              ><input
-                type="checkbox"
-                class="filter-checkbox"
-                value="Castramóvel"
-                checked
-              />
-              Castramóvel</label
-            >
-            <label
-              ><input
-                type="checkbox"
-                class="filter-checkbox"
-                value="Vacinação"
-                checked
-              />
-              Vacinação</label
-            >
-          </div>
-        </section>
-        <section id="map"></section>
-      </main>
-    </section>
+  <div class="controls">
+    <input id="city-input" type="text" placeholder="Cidade" />
+    <input id="state-input" type="text" placeholder="Estado (sigla, ex: PE)" />
+    <button id="search-btn">Buscar</button>
+  </div>
+
+  <div id="map"></div>
+    <div class="map__legend">
+    <h4>Legenda</h4>
+    <div>
+        <span class="legend-icon legend-icon-clinic"></span>
+        <span>Clínicas Veterinárias</span>
+    </div>
+    <div>
+        <span class="legend-icon legend-icon-vaccine"></span>
+        <span>Vacinação Antirrábica</span>
+    </div>
+    <div>
+        <span class="legend-icon legend-icon-castra"></span>
+        <span>Castramóvel / Eventos</span>
+    </div>
+  </div>
 
     ---
 

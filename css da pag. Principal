@@ -350,15 +350,15 @@ header {
 /* Cores de fundo específicas para ícones de informações */
 
 .about__row:nth-child(1) .about__content span {
-  background-color: #ffbf60; /* Ajusta para a primeira linha em HTML */
+  background-color: #2c3e50; /* Novo azul escuro */
 }
 
 .about__row:nth-child(2) .about__content span {
-  background-color: #40cee0; /* Ajusta para a segunda linha em HTML */
+  background-color: #27ae60; /* Novo verde */
 }
 
 .about__row:nth-child(3) .about__content span {
-  background-color: #ff8f80; /* Ajusta para a terceira linha em HTML */
+  background-color: #ff8f80; /* Mantém a cor original ou altere também */
 }
 
 .about__content h4 {
@@ -383,10 +383,10 @@ header {
 
 .add-professional,
 .filters {
-  background-color: var(--white-background);
+  background-color: #ffffff ;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px var(--shadow-color);
+  box-shadow: #40cee0 ;
   margin-bottom: 20px;
   text-align: center; /* Adiciona para consistência dos filtros */
 }
@@ -410,7 +410,7 @@ header {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid var(--primary-color); /* Uso de variável */
+   border: 1px solid var(--primary-color); /* Uso de variável */
 }
 
 .add-professional button {

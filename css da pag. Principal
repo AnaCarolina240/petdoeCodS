@@ -309,76 +309,134 @@ header {
 
 /* Seção Sobre */
 
-.about__row {
-  margin-top: 2rem;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column; /* Define como coluna padrão para mobile */
-  overflow: hidden;
+/* --- Seção Sobre --- */
+
+.about__container {
+    display: grid;
+    gap: 2rem;
+    overflow: hidden; /* Importante para garantir que as animações ScrollReveal não causem overflow */
+    padding-block: 5rem; /* Garante padding vertical consistente */
 }
 
-.about__row:nth-child(3) {
-  margin-top: 4rem;
+.about__image img {
+    max-width: 500px;
+    margin-inline: auto; /* Centraliza a imagem */
+    border-radius: 1rem; /* Adicionar um leve arredondamento */
+    box-shadow: 0 4px 15px var(--shadow-color); /* Sombra consistente */
 }
 
-.about__image {
-  flex: 1;
-  max-width: 400px;
-  margin-inline: auto;
+.about__content .section__subheader {
+    /* Pode ser mantido ou ajustado se precisar de um subcabeçalho específico para "Sobre" */
+    margin-bottom: 0.5rem; /* Espaçamento menor para subcabeçalho */
 }
 
-.about__content {
-  flex: 1;
-  text-align: center;
+.about__content .section__header {
+    /* Pode ser mantido ou ajustado */
+    margin-bottom: 1.5rem; /* Espaçamento padrão para cabeçalho */
 }
 
+.about__content .section__description {
+    /* Reutiliza a classe geral para a descrição */
+    margin-block: 1rem 2rem; /* Espaçamento vertical para a descrição */
+    color: var(--text-light); /* Cor do texto consistente */
+    text-align: center; /* Centraliza o texto por padrão */
+}
+
+/* Estilo para os spans de ícone/destaque dentro do about__content */
 .about__content span {
-  margin-inline: auto;
-  margin-bottom: 1rem;
-  width: 80px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
+    display: inline-flex; /* Permite centralizar facilmente o conteúdo se for um ícone */
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    margin-inline: auto; /* Centraliza o span */
+    margin-bottom: 1rem;
+    padding: 8px 18px; /* Ajuste do padding */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-radius: 5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
 .about__content span img {
-  max-width: 40px;
+    max-width: 30px; /* Tamanho do ícone dentro do span */
+    height: auto;
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
 }
 
-/* Cores de fundo específicas para ícones de informações */
 
-.about__row:nth-child(1) .about__content span {
-  background-color: #2c3e50; /* Novo azul escuro */
+/* Reorganização das cores de fundo para os spans */
+.about__content .highlight-yellow {
+    background-color: var(--accent-yellow); /* Amarelo: #ffd75e */
 }
 
-.about__row:nth-child(2) .about__content span {
-  background-color: #27ae60; /* Novo verde */
+.about__content .highlight-blue {
+    background-color: #257ae7; /* Azul específico */
 }
 
-.about__row:nth-child(3) .about__content span {
-  background-color: #ff8f80; /* Mantém a cor original ou altere também */
+.about__content .highlight-red {
+    background-color: var(--red-accent); /* Vermelho: #ff8f80 (ou ajuste se --red-accent for diferente) */
 }
+
 
 .about__content h4 {
-  max-width: 450px;
-  margin-inline: auto;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 3rem;
+    /* Título principal do bloco de conteúdo "Sobre" */
+    max-width: 450px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    font-size: 2.2rem; /* Levemente maior */
+    font-weight: 600; /* Mais destaque */
+    color: var(--text-dark);
+    line-height: 3.2rem;
+    text-align: center; /* Centraliza o título */
 }
 
-.about__content p {
-  max-width: 450px;
-  margin-inline: auto;
-  color: var(--text-light);
+.about__btn {
+    margin-top: 2.5rem; /* Mais espaço acima do botão */
+    display: flex;
+    justify-content: center;
 }
 
+/* Media Query para a seção "Sobre" */
+@media (min-width: 768px) {
+    .about__container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para imagem e conteúdo */
+        align-items: center;
+    }
 
+    .about__content {
+        text-align: left; /* Alinha o texto à esquerda no desktop */
+    }
 
+    .about__content span {
+        margin-inline: unset; /* Remove centralização para alinhar à esquerda */
+    }
+
+    .about__content h4 {
+        margin-inline: unset; /* Remove centralização para alinhar à esquerda */
+        text-align: left; /* Alinha o título à esquerda */
+    }
+
+    .about__content p {
+        text-align: left; /* Alinha o parágrafo à esquerda */
+        margin-inline: unset;
+    }
+
+    .about__btn {
+        justify-content: flex-start; /* Alinha o botão à esquerda */
+    }
+
+    .about__row:nth-child(2) {
+        /* Para inverter a ordem em linhas alternadas */
+        grid-template-areas: "content image"; /* Conteúdo à esquerda, imagem à direita */
+    }
+    .about__row:nth-child(2) .about__image {
+        grid-area: image;
+    }
+    .about__row:nth-child(2) .about__content {
+        grid-area: content;
+    }
+}
 /* Seção de ONGs */
 
 .add-professional,
@@ -485,60 +543,144 @@ header {
   color: var(--red-accent);
 }
 
-/* Seção do Mapa */
+/* --- Seção do Mapa --- */
 
+/* Contêiner principal do mapa para alinhamento e espaçamento */
+.map__section__container {
+    max-width: var(--max-width);
+    padding: 5rem 1rem;
+    margin: auto;
+    background-color: var(--light-gray-background); /* Fundo consistente */
+}
+
+/* Título e subtítulo da seção do mapa */
+.map__section__subheader {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.map__section__header {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Controles de busca e filtros do mapa */
+.map__controls {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: center; /* Centraliza itens */
+    gap: 15px; /* Espaçamento entre os elementos de controle */
+    padding: 20px;
+    background-color: var(--white-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px;
+}
+
+.map__controls input[type="text"],
+.map__controls button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color); /* Borda primária */
+    outline: none; /* Remove o contorno ao focar */
+    transition: all 0.3s ease;
+}
+
+.map__controls input[type="text"]:focus {
+    border-color: var(--accent-yellow); /* Destaca no foco */
+    box-shadow: 0 0 0 3px rgba(64, 206, 224, 0.3); /* Sombra de foco com cor primária */
+}
+
+.map__controls button {
+    background-color: var(--primary-color);
+    color: var(--white-background);
+    cursor: pointer;
+}
+
+.map__controls button:hover {
+    background-color: var(--red-accent); /* Mudar cor ao passar o mouse */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+}
+
+/* Estilo do contêiner do mapa */
 #map {
-  height: 500px;
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--shadow-color); /* Sombra adicionada ao mapa */
+    height: 500px; /* Altura padrão para o mapa */
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color); /* Sombra com variável */
+    overflow: hidden; /* Garante que o mapa fique dentro da borda */
 }
 
-.controls {
-  background-color: var(--accent-yellow);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--shadow-color);
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Legenda do mapa */
+.map__legend {
+    background: var(--white-background);
+    padding: 15px;
+    margin-top: 20px; /* Espaço do mapa */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra mais leve */
+    font-size: 0.95rem;
+    color: var(--text-dark);
 }
 
-.search-bar,
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+.map__legend h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-.search-bar input {
-  padding: 8px;
-  border: 1px solid var(--text-dark);
-  border-radius: 4px;
-  flex: 1;
-  min-width: 120px;
+.map__legend div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
 }
 
-.search-bar button {
-  padding: 8px 12px;
-  background-color: var(--red-accent);
-  color: var(--white-background);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.map__legend .legend-icon {
+    width: 25px; /* Tamanho dos ícones na legenda */
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.search-bar button:hover {
-  background-color: var(--primary-color);
+/* Estilos específicos para os ícones na legenda (adicione conforme necessário no HTML ou JS) */
+.legend-icon-clinic {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png'); /* Caminho do seu ícone de clínica */
+}
+.legend-icon-vaccine {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/809/809957.png'); /* Caminho do seu ícone de vacina */
+}
+.legend-icon-castra {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2966/2966489.png'); /* Caminho do seu ícone de castração */
 }
 
-.filter-bar label {
-  margin-right: 15px;
-  white-space: nowrap; /* Impedir a quebra para rótulos */
+/* Media Queries para responsividade do mapa */
+@media (min-width: 768px) {
+    .map__controls {
+        justify-content: space-between; /* Melhor distribuição em telas maiores */
+        flex-wrap: nowrap; /* Não quebra linha */
+    }
+
+    .map__controls input[type="text"] {
+        flex-grow: 1; /* Permite que os inputs ocupem mais espaço */
+        max-width: 250px; /* Limita a largura para inputs */
+    }
 }
+
+@media (min-width: 1024px) {
+    #map {
+        height: 600px; /* Aumenta a altura em telas maiores */
+    }
+}
+
 
 /* Rolagem de Fotos de Animais (Banner) */
 .banner__container {

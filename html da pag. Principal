@@ -318,10 +318,27 @@
             <img src="https://gazetadopontal.com.br/wp-content/uploads/2022/11/8-1024x1024.jpg" alt="instagram" />
             <img src="https://th.bing.com/th/id/OIP.hD6kWXdM3AHhDjdKULoKwAHaHa?w=750&h=750&rs=1&pid=ImgDetMain" alt="instagram" />
         </div>
+
+        <section class="denuncia__container">
+        <div class="denuncia__wrapper">
+            <img src="https://st3.depositphotos.com/1146092/12954/i/450/depositphotos_129543926-stock-illustration-dog-on-the-phone.jpg" alt="Cachorro sinalizando para pesquisa" style="width: 200px; margin-right: 20px;">
+            <div>
+                <h2>Faça sua Denúncia</h2>
+                <p>Encontre os contatos para denunciar casos de maus-tratos:</p>
+
+                <div class="denuncia__search">
+                    <label for="cidadeDenuncia">Cidade:</label>
+                    <input type="text" id="cidadeDenuncia" name="cidadeDenuncia" placeholder="Digite a cidade">
+                    <button onclick="pesquisarDenuncia()">Pesquisar</button>
+                </div>
+
+                <div id="denuncia__resultados">
+                    </div>
+            </div>
+        </div>
     </section>
 
     <section class="section__container service__container" id="Contatos">
-        <p class="section__subheader">Contatos</p>
     </section> <footer id="contact">
         <div class="section__container footer__container">
             <div class="footer__col">

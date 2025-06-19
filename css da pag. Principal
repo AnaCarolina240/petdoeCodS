@@ -307,136 +307,198 @@ header {
   }
 }
 
-/* Seção Sobre */
-
 /* --- Seção Sobre --- */
 
-.about__container {
-    display: grid;
-    gap: 2rem;
-    overflow: hidden; /* Importante para garantir que as animações ScrollReveal não causem overflow */
-    padding-block: 5rem; /* Garante padding vertical consistente */
-}
-
-.about__image img {
-    max-width: 500px;
-    margin-inline: auto; /* Centraliza a imagem */
-    border-radius: 1rem; /* Adicionar um leve arredondamento */
-    box-shadow: 0 4px 15px var(--shadow-color); /* Sombra consistente */
-}
-
-.about__content .section__subheader {
-    /* Pode ser mantido ou ajustado se precisar de um subcabeçalho específico para "Sobre" */
-    margin-bottom: 0.5rem; /* Espaçamento menor para subcabeçalho */
-}
-
-.about__content .section__header {
-    /* Pode ser mantido ou ajustado */
-    margin-bottom: 1.5rem; /* Espaçamento padrão para cabeçalho */
-}
-
-.about__content .section__description {
-    /* Reutiliza a classe geral para a descrição */
-    margin-block: 1rem 2rem; /* Espaçamento vertical para a descrição */
-    color: var(--text-light); /* Cor do texto consistente */
-    text-align: center; /* Centraliza o texto por padrão */
-}
-
-/* Estilo para os spans de ícone/destaque dentro do about__content */
 .about__content span {
-    display: inline-flex; /* Permite centralizar facilmente o conteúdo se for um ícone */
-    align-items: center;
-    justify-content: center;
-    max-width: fit-content;
-    margin-inline: auto; /* Centraliza o span */
-    margin-bottom: 1rem;
-    padding: 8px 18px; /* Ajuste do padding */
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    border-radius: 5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  width: 80px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
 }
 
 .about__content span img {
-    max-width: 30px; /* Tamanho do ícone dentro do span */
-    height: auto;
-    margin-right: 8px; /* Espaçamento entre ícone e texto */
+  max-width: 40px;
 }
 
-
-/* Reorganização das cores de fundo para os spans */
-.about__content .highlight-yellow {
-    background-color: var(--accent-yellow); /* Amarelo: #ffd75e */
+.about__row:nth-child(3) .about__content span {
+  background-color: #ffbf60;
 }
 
-.about__content .highlight-blue {
-    background-color: #257ae7; /* Azul específico */
+.about__row:nth-child(4) .about__content span {
+  background-color: #257ae7;
 }
 
-.about__content .highlight-red {
-    background-color: var(--red-accent); /* Vermelho: #ff8f80 (ou ajuste se --red-accent for diferente) */
+.about__row:nth-child(5) .about__content span {
+  background-color: #ff8f80;
 }
-
 
 .about__content h4 {
-    /* Título principal do bloco de conteúdo "Sobre" */
-    max-width: 450px;
-    margin-inline: auto;
-    margin-bottom: 1rem;
-    font-size: 2.2rem; /* Levemente maior */
-    font-weight: 600; /* Mais destaque */
-    color: var(--text-dark);
-    line-height: 3.2rem;
-    text-align: center; /* Centraliza o título */
+  max-width: 450px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 3rem;
+}
+
+.about__content p {
+  max-width: 450px;
+  margin-inline: auto;
+  color: var(--text-light);
+}
+
+.product {
+  position: relative;
+  isolation: isolate;
+}
+
+.product::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  background-color: #40cee0;
+  z-index: -1;
+}
+
+.product__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.product__card h4 {
+  margin-block: 1rem 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.product__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.product__card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.service__flex {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.header__content {
+  padding-block: 2rem 5rem;
+  padding-inline: 1rem;
+}
+
+.header__content h1 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 4rem;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.about__image img {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.about__content .section__description {
+  margin-block: 1rem;
 }
 
 .about__btn {
-    margin-top: 2.5rem; /* Mais espaço acima do botão */
-    display: flex;
-    justify-content: center;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-/* Media Query para a seção "Sobre" */
-@media (min-width: 768px) {
-    .about__container {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas para imagem e conteúdo */
-        align-items: center;
-    }
-
-    .about__content {
-        text-align: left; /* Alinha o texto à esquerda no desktop */
-    }
-
-    .about__content span {
-        margin-inline: unset; /* Remove centralização para alinhar à esquerda */
-    }
-
-    .about__content h4 {
-        margin-inline: unset; /* Remove centralização para alinhar à esquerda */
-        text-align: left; /* Alinha o título à esquerda */
-    }
-
-    .about__content p {
-        text-align: left; /* Alinha o parágrafo à esquerda */
-        margin-inline: unset;
-    }
-
-    .about__btn {
-        justify-content: flex-start; /* Alinha o botão à esquerda */
-    }
-
-    .about__row:nth-child(2) {
-        /* Para inverter a ordem em linhas alternadas */
-        grid-template-areas: "content image"; /* Conteúdo à esquerda, imagem à direita */
-    }
-    .about__row:nth-child(2) .about__image {
-        grid-area: image;
-    }
-    .about__row:nth-child(2) .about__content {
-        grid-area: content;
-    }
+.fleet__container {
+  padding-block: 5rem;
 }
+
+.fleet__container :is(.section__subheader, .section__header) {
+  padding-inline: 1rem;
+}
+
+.fleet__container .section__description {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  padding-inline: 1rem;
+}
+
+.fleet__wrapper-1 {
+  margin-bottom: 1rem;
+}
+
+.fleet__wrapper-1,
+.fleet__wrapper-2 {
+  overflow-x: hidden;
+}
+
+.fleet__images {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fleet__wrapper-1 .fleet__images {
+  animation: scroll-left 45s linear infinite;
+}
+
+.fleet__wrapper-2 .fleet__images {
+  animation: scroll-right 45s linear infinite;
+}
+
+.fleet__images img {
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fleet__wrapper-1 .fleet__images img {
+  max-width: 450px;
+}
+
+.fleet__wrapper-2 .fleet__images img {
+  max-width: 300px;
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
 /* Seção de ONGs */
 
 .add-professional,
@@ -546,38 +608,42 @@ header {
 /* --- Seção do Mapa --- */
 
 /* Contêiner principal do mapa para alinhamento e espaçamento */
+/* Título da seção */
+.map__section__header {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Adicione esta linha para testar */
+}
+
+/* Subtítulo da seção */
+.map__section__subheader {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center; /* Adicione esta linha para testar */
+}
+
 .map__section__container {
     max-width: var(--max-width);
     padding: 5rem 1rem;
     margin: auto;
     background-color: var(--light-gray-background); /* Fundo consistente */
+    /* ... outras propriedades ... */
 }
 
-/* Título e subtítulo da seção do mapa */
-.map__section__subheader {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.map__section__header {
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    text-align: center;
-    line-height: 3.5rem;
-    margin-bottom: 2rem;
-}
 
 /* Controles de busca e filtros do mapa */
 .map__controls {
     display: flex;
     flex-wrap: wrap; /* Permite quebrar linha em telas menores */
     justify-content: center; /* Centraliza itens */
-    gap: 15px; /* Espaçamento entre os elementos de controle */
+    gap: 2px; /* Espaçamento entre os elementos de controle */
     padding: 20px;
-    background-color: var(--white-background);
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     margin-bottom: 20px;

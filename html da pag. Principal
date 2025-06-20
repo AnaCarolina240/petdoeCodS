@@ -22,8 +22,10 @@
             <li><a href="#ONG'S">ONG'S</a></li>
             <li><a href="#Sobre">Sobre</a></li>
             <li><a href="#Mapa">Mapa</a></li>
+            <li><a href="#Descontos">Descontos</a></li>
             <li><a href="#Freelance">Freelance</a></li>
             <li><a href="#Serviços">Serviços</a></li>
+            <li><a href="#Forum">Fórum</a></li> 
             <li><a href="#Contatos">Contatos</a></li>
         </ul>
     </nav>
@@ -153,6 +155,53 @@
             <img src="https://th.bing.com/th/id/R.51635cb3b46f1451518c18187811b882?rik=%2br7wpnpOn9Hi%2fw&pid=ImgRaw&r=0" alt="banner" />
         </div>
     </section>
+<section class="section__container discounts__container" id="Descontos">
+        <p class="section__subheader">Recompensas</p>
+        <h2 class="section__header">Ganhe Descontos Concluindo Tarefas!</h2>
+
+        <div class="tasks__section">
+            <h3>Tarefas Disponíveis</h3>
+            <ul id="task-list">
+                </ul>
+        </div>
+
+        <div class="ranking__section">
+            <h3>Top 3 Concluintes</h3>
+            <ol id="ranking-list">
+                </ol>
+        </div>
+    </section>
+
+    <section class="section__container forum__container" id="Forum">
+        <p class="section__subheader">Comunidade</p>
+        <h2 class="section__header">Fórum Interativo PetDoe</h2>
+
+        <div class="forum__post-form">
+            <h3>Criar Nova Publicação</h3>
+            <input type="text" id="post-title" placeholder="Título da Publicação" required>
+            <textarea id="post-content" placeholder="Escreva sua publicação aqui..." rows="5" required></textarea>
+            <button id="submit-post">Publicar</button>
+        </div>
+
+        <div class="forum__posts" id="forum-posts">
+            <h3>Últimas Publicações</h3>
+            <div class="forum__post">
+                <h4>Exemplo de Título</h4>
+                <p>Este é um exemplo de publicação no fórum. Compartilhe suas experiências, dúvidas e dicas sobre pets!</p>
+                <div class="post__meta">
+                    <span>Por: Usuário Exemplo</span> | <span>20 de Junho de 2025</span>
+                </div>
+                <div class="post__comments">
+                    <div class="comment">
+                        <p>Ótima iniciativa!</p>
+                        <span>Por: Amigo Pet</span>
+                    </div>
+                </div>
+                <input type="text" class="comment-input" placeholder="Adicionar comentário...">
+                <button class="add-comment-btn">Comentar</button>
+            </div>
+        </div>
+    </section>
 
     <section class="section__container" id="Mapa">
         <header>
@@ -169,11 +218,11 @@
         <div id="map"></div>
         <div class="legend map__legend">
             <div>
-                <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" width="16" />
+                <img src="https://cdn-icons-png.flaticon.com/256/9184/9184277.png" width="16" />
                 Clínica veterinária
             </div>
             <div>
-                <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" width="16" />
+                <img src="https://cdn-icons-png.flaticon.com/512/4891/4891742.png" width="16" />
                 Vacinação antirrábica
             </div>
             <div>
@@ -335,6 +384,26 @@
                 <div id="denuncia__resultados">
                     </div>
             </div>
+
+            <div class="chatbot-container" id="chatbot-container">
+        <button class="chatbot-toggle-btn" id="chatbot-toggle-btn">
+            <i class="ri-chat-smile-2-fill"></i>
+            <span>Perdeu seu Pet?</span>
+        </button>
+        <div class="chatbot-box" id="chatbot-box">
+            <div class="chatbot-header">
+                <h4>PetDoe Ajuda</h4>
+                <button class="chatbot-close-btn" id="chatbot-close-btn">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">Olá! Sou o PetBot. Como posso te ajudar a encontrar seu pet?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Digite sua mensagem...">
+                <button id="chatbot-send-btn"><i class="ri-send-plane-fill"></i></button>
+            </div>
+        </div>
+
         </div>
     </section>
 

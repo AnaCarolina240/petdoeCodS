@@ -158,10 +158,10 @@
                   <li>✔ Acesso ao Catálogo de Freelancers</li>
                   <li>✔ Publicar seu Perfil de Freelancer</li>
                   <li>✔ Contato direto com Clientes</li>
-                  <li>✔ Suporte Prioritário</li>
-                  <li>✔ Descontos em Cursos e Eventos</li>
+                  <li>✔ Chatbot</li>
+                  <li>✔ Fórum Interativo</li>
               </ul>
-              <div class="price">R$ 29,90/mês</div>
+              <div class="price">R$ 39,99/mês</div>
               <button type="button" class="btn-assinar" data-plano="pro-freelancer">Assinar Plano Pro</button>
           </div>
       </div>

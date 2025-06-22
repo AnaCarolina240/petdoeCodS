@@ -82,7 +82,8 @@ form button,
   margin: 25px auto 0;
 }
 
-/* Specific styling for the choice screen buttons */
+/* Estilizações para os botões da tela de escolha */
+
 .choice-buttons {
   display: flex;
   flex-direction: column;
@@ -99,20 +100,21 @@ form button,
 }
 
 .user-button {
-  background-color: #ff6f6f; /* Green for user */
+  background-color: #ff6f6f; 
 }
 .user-button:hover {
   background-color: #40cee0;
 }
 
 .freelancer-button {
-  background-color: #ffd75e; /* Teal for freelancer */
+  background-color: #ffd75e; /* Teal para freelancer */
 }
 .freelancer-button:hover {
   background-color: #40cee0;
 }
 
-/* General plans container (for User Registration) */
+/* Container de planos gerais (para registro de usuário) */
+
 .plans {
   display: flex;
   gap: 20px;
@@ -121,7 +123,8 @@ form button,
   margin-top: 30px;
 }
 
-/* Single plan style */
+/* Estilo de plano único */
+
 .plan {
   flex: 1 1 300px;
   max-width: 400px;
@@ -129,7 +132,7 @@ form button,
   padding: 20px;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center content within the plan card */
+  text-align: center; /* Centralize o conteúdo dentro do cartão do plano */
 }
 
 .plan h2 {
@@ -140,7 +143,7 @@ form button,
 .plan ul {
   list-style: none;
   padding-left: 0;
-  text-align: left; /* Align list items to the left */
+  text-align: left; /* Alinhar os itens da lista à esquerda */
 }
 
 .plan li {
@@ -154,28 +157,31 @@ form button,
   color: #cf1414;
 }
 
-/* Specific centering for the freelancer plan */
+/* Centro específico para o plano de freelancers */
+
 .freelancer-plan-container {
-  display: flex; /* Use flexbox to center its child */
-  justify-content: center; /* Center horizontally */
+  display: flex; /* Use flexbox para centralizar seu filho */
+  justify-content: center; /* Centralizar horizontalmente */
   margin-top: 30px;
-  margin-bottom: 30px; /* Add some space below the plan */
+  margin-bottom: 30px; /* Adicione um espaço abaixo do plano */
 }
 
-/* Style for the freelancer pro plan card */
+/* Estilo para o cartão do plano profissional para freelancers */
+
 .freelancer-pro-plan {
-    flex: none; /* Override flex-basis from .plan for single item */
-    width: 300px; /* Fixed width for the single card */
-    max-width: 100%; /* Ensure it's responsive */
+    flex: none; /* Sobrescrever o flex-basis do .plan para um único item */
+    width: 300px; /* Largura fixa para o cartão único */
+    max-width: 100%; /* Certifique-se de que seja responsivo */
 }
 
 /* "Voltar" and "Cadastre-se aqui" links */
+
 .switch-form {
   text-align: center;
   margin-top: 20px;
 }
 .switch-form a {
-  color: #cf1414; /* A distinct color for navigation links */
+  color: #cf1414; /* Uma cor distinta para links de navegação */
   text-decoration: none;
   font-weight: bold;
 }
@@ -202,6 +208,6 @@ form button,
   }
 
   .freelancer-pro-plan {
-      width: 100%; /* Full width on small screens */
+      width: 100%; /* Largura total em telas pequenas */
   }
 }

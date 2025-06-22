@@ -1,1 +1,265 @@
+// --- Configuração do Firebase (OBRIGATÓRIO se estiver usando Autenticação/Firestore do Firebase) ---
+// IMPORTANTE: Substitua pelas configurações reais do seu projeto Firebase
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_BUCKET.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
 
+// Inicializa o Firebase apenas se a configuração não estiver vazia (ou seja, se você já a configurou)
+if (firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_API_KEY") {
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore(); // Para armazenar detalhes de usuários/freelancers
+} else {
+    console.warn("A configuração do Firebase está faltando ou é a padrão. A Autenticação/Firestore não funcionará.");
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtém as telas principais
+  const loginScreen = document.getElementById("loginScreen");
+  const choiceScreen = document.getElementById("choiceScreen");
+  const userRegistration = document.getElementById("userRegistration");
+  const freelancerRegistration = document.getElementById("freelancerRegistration");
+
+  // Obtém os elementos de navegação
+  const showRegistrationChoices = document.getElementById("showRegistrationChoices");
+  const backToLoginFromChoices = document.getElementById("backToLoginFromChoices");
+  const btnRegisterUser = document.getElementById("btnRegisterUser");
+  const btnRegisterFreelancer = document = document.getElementById("btnRegisterFreelancer");
+  const backToChoiceUser = document.getElementById("backToChoiceUser");
+  const backToChoiceFreelancer = document.getElementById("backToChoiceFreelancer");
+
+  // Obtém os formulários
+  const formLogin = document.getElementById("formLogin");
+  const formCadastroUsuario = document.getElementById("formCadastroUsuario");
+  const formCadastroFreelancer = document.getElementById("formCadastroFreelancer");
+
+
+  // --- Função auxiliar para mostrar/esconder telas ---
+  function showScreen(screenId) {
+    loginScreen.style.display = "none";
+    choiceScreen.style.display = "none";
+    userRegistration.style.display = "none";
+    freelancerRegistration.style.display = "none";
+
+    document.getElementById(screenId).style.display = "block";
+  }
+
+  // --- Exibição Inicial: Mostra a tela de Login primeiro ---
+  showScreen("loginScreen");
+
+
+  // --- Listeners de Eventos de Navegação ---
+
+  // Do Login para as Opções de Cadastro
+  showRegistrationChoices.addEventListener("click", function (e) {
+    e.preventDefault();
+    showScreen("choiceScreen");
+  });
+
+  // Das Opções de Cadastro de volta para o Login
+  backToLoginFromChoices.addEventListener("click", function (e) {
+    e.preventDefault();
+    showScreen("loginScreen");
+  });
+
+  // Das Opções de Cadastro para o Cadastro de Usuário
+  btnRegisterUser.addEventListener("click", function () {
+    showScreen("userRegistration");
+  });
+
+  // Das Opções de Cadastro para o Cadastro de Freelancer
+  btnRegisterFreelancer.addEventListener("click", function () {
+    showScreen("freelancerRegistration");
+  });
+
+  // Do Cadastro de Usuário de volta para as Opções de Cadastro
+  backToChoiceUser.addEventListener("click", function (e) {
+    e.preventDefault();
+    showScreen("choiceScreen");
+  });
+
+  // Do Cadastro de Freelancer de volta para as Opções de Cadastro
+  backToChoiceFreelancer.addEventListener("click", function (e) {
+    e.preventDefault();
+    showScreen("choiceScreen");
+  });
+
+
+  // --- Manipuladores de Envio de Formulário ---
+
+  // Envio do Formulário de Login
+  formLogin.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = formLogin.loginEmail.value;
+    const password = formLogin.loginSenha.value;
+
+    console.log("Tentando login com:", { email, password });
+
+    // --- Autenticação de Login com Firebase (Descomente e configure se estiver usando Firebase) ---
+    /*
+    if (typeof auth !== 'undefined') { // Verifica se o Firebase Auth está inicializado
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                console.log('Usuário logado:', userCredential.user);
+                alert('Login realizado com sucesso! Bem-vindo(a)!');
+                formLogin.reset();
+                // Redireciona o usuário para um painel ou página principal do aplicativo
+                // window.location.href = 'dashboard.html'; // Exemplo de redirecionamento
+            })
+            .catch((error) => {
+                console.error('Erro de login:', error);
+                alert(`Erro de login: ${error.message}`);
+            });
+    } else {
+        alert("Firebase Auth não configurado. Verifique o console para mais detalhes.");
+        // Placeholder para login sem Firebase
+        if (email === "test@example.com" && password === "password") {
+            alert("Login de demonstração bem-sucedido!");
+            formLogin.reset();
+            // window.location.href = 'dashboard.html'; // Exemplo de redirecionamento
+        } else {
+            alert("Login falhou. E-mail ou senha incorretos (Demonstração).");
+        }
+    }
+    */
+    // Alerta provisório por enquanto, se o Firebase não estiver configurado
+    alert("Funcionalidade de Login em desenvolvimento. Dados: E-mail: " + email + ", Senha: " + password);
+    formLogin.reset();
+  });
+
+
+  // Envio do Formulário de Cadastro de Usuário
+  formCadastroUsuario.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userData = {
+      tipoCadastro: "Usuario",
+      nome: formCadastroUsuario.userNome.value,
+      nomeSocial: formCadastroUsuario.userNomeSocial.value,
+      genero: formCadastroUsuario.userGenero.value,
+      cpf: formCadastroUsuario.userCpf.value,
+      email: formCadastroUsuario.userEmail.value,
+      senha: formCadastroUsuario.userSenha.value,
+      celular: formCadastroUsuario.userCelular.value,
+      dataNascimento: formCadastroUsuario.userDataNascimento.value,
+      rua: formCadastroUsuario.userRua.value,
+      numero: formCadastroUsuario.userNumero.value,
+      cidade: formCadastroUsuario.userCidade.value,
+      estado: formCadastroUsuario.userEstado.value
+    };
+
+    console.log("Dados de Usuário:", userData);
+
+    // --- Autenticação de Cadastro de Usuário com Firebase (Descomente e configure se estiver usando Firebase) ---
+    /*
+    if (typeof auth !== 'undefined') {
+        auth.createUserWithEmailAndPassword(userData.email, userData.senha)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log('Usuário registrado no Auth:', user);
+                // Armazena dados adicionais do usuário no Firestore
+                return db.collection('users').doc(user.uid).set({
+                    ...userData, // Operador spread para copiar todos os campos de userData
+                    uid: user.uid,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+            })
+            .then(() => {
+                alert("Cadastro de Usuário realizado com sucesso! Você pode tentar fazer login agora.");
+                formCadastroUsuario.reset();
+                showScreen("loginScreen"); // Volta para o login após o cadastro
+            })
+            .catch((error) => {
+                console.error('Erro ao registrar usuário:', error);
+                alert(`Erro ao cadastrar usuário: ${error.message}`);
+            });
+    } else {
+        alert("Firebase Auth não configurado para cadastro. Verifique o console.");
+        // Placeholder para cadastro sem Firebase
+        alert("Cadastro de Usuário realizado com sucesso! (Demonstração)");
+        formCadastroUsuario.reset();
+        showScreen("loginScreen"); // Volta para o login após o cadastro
+    }
+    */
+    alert("Cadastro de Usuário realizado com sucesso!"); // Placeholder
+    formCadastroUsuario.reset();
+    showScreen("loginScreen");
+  });
+
+  // Envio do Formulário de Cadastro de Freelancer
+  formCadastroFreelancer.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const freelancerData = {
+      tipoCadastro: "Freelancer",
+      nome: formCadastroFreelancer.freelancerNome.value,
+      cpf: formCadastroFreelancer.freelancerCpf.value,
+      dataNascimento: formCadastroFreelancer.freelancerDataNascimento.value,
+      email: formCadastroFreelancer.freelancerEmail.value,
+      senha: formCadastroFreelancer.freelancerSenha.value,
+      celular: formCadastroFreelancer.freelancerCelular.value,
+      tipoServico: formCadastroFreelancer.freelancerTipo.value,
+      descricao: formCadastroFreelancer.freelancerDescricao.value,
+      cidadeAtuacao: formCadastroFreelancer.freelancerCidade.value,
+      estadoAtuacao: formCadastroFreelancer.freelancerEstado.value,
+      foto: formCadastroFreelancer.freelancerFoto.files.length > 0 ? formCadastroFreelancer.freelancerFoto.files[0].name : "Nenhuma foto selecionada",
+      plano: "Pro" // Atribui automaticamente o plano Pro no cadastro de freelancer
+    };
+
+    console.log("Dados de Freelancer:", freelancerData);
+
+    // --- Autenticação de Cadastro de Freelancer com Firebase (Descomente e configure se estiver usando Firebase) ---
+    /*
+    if (typeof auth !== 'undefined') {
+        auth.createUserWithEmailAndPassword(freelancerData.email, freelancerData.senha)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log('Freelancer registrado no Auth:', user);
+                // Armazena dados adicionais do freelancer no Firestore
+                return db.collection('freelancers').doc(user.uid).set({
+                    ...freelancerData,
+                    uid: user.uid,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    rating: 0 // Classificação padrão para novos freelancers
+                });
+            })
+            .then(() => {
+                alert("Cadastro de Freelancer realizado com sucesso! Você pode tentar fazer login agora.");
+                formCadastroFreelancer.reset();
+                showScreen("loginScreen"); // Volta para o login após o cadastro
+            })
+            .catch((error) => {
+                console.error('Erro ao registrar freelancer:', error);
+                alert(`Erro ao cadastrar freelancer: ${error.message}`);
+            });
+    } else {
+        alert("Firebase Auth não configurado para cadastro de freelancer. Verifique o console.");
+        // Placeholder para cadastro sem Firebase
+        alert("Cadastro de Freelancer realizado com sucesso! (Demonstração)");
+        formCadastroFreelancer.reset();
+        showScreen("loginScreen"); // Volta para o login após o cadastro
+    }
+    */
+    alert("Cadastro de Freelancer realizado com sucesso!"); // Placeholder
+    formCadastroFreelancer.reset();
+    showScreen("loginScreen");
+  });
+
+  // --- Manipula os Botões "Assinar" dos Planos (para Cadastro de Usuário e Plano Pro de Freelancer) ---
+  const btnAssinar = document.querySelectorAll(".btn-assinar");
+  btnAssinar.forEach(button => {
+    button.addEventListener("click", function() {
+      const plano = this.dataset.plano;
+      alert(`Você selecionou o Plano ${plano.charAt(0).toUpperCase() + plano.slice(1)}!`);
+      // Para o plano pro de freelancer, este botão atua como uma confirmação/gatilho para pagamento ou etapa final.
+      // Em uma aplicação real, isso iniciaria um fluxo de pagamento ou atualizaria um banco de dados.
+      // Se o pagamento for necessário, o envio real para o Firebase ocorreria APÓS a confirmação do pagamento.
+    });
+  });
+});

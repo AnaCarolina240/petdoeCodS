@@ -157,15 +157,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const clinicIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/256/9184/9184277.png',
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/6363/6363425.png',
   iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
 });
 const vaccineIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/809/809957.phttps://cdn-icons-png.flaticon.com/512/4891/4891742.pngg',
+  iconUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/vacina-pet-12706867-10330634.png?f=webp',
   iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
 });
 const castraIcon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/2966/2966489.png',
+  iconUrl: 'https://cdn-icons-png.freepik.com/256/10753/10753901.png?semt=ais_hybrid',
   iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -30]
 });
 

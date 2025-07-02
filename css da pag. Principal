@@ -590,13 +590,13 @@ header {
 
 /* Estilos específicos para os ícones na legenda (ajuste as classes no HTML se necessário) */
 .legend-icon-clinic {
-  background-image: url('https://cdn-icons-png.flaticon.com/256/9184/9184277.png');
+  background-image: url('https://cdn-icons-png.flaticon.com/512/6363/6363425.png');
 }
 .legend-icon-vaccine {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/4891/4891742.png');
+  background-image: url('https://cdn3d.iconscout.com/3d/premium/thumb/vacina-pet-12706867-10330634.png?f=webp');
 }
 .legend-icon-castra {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/2966/2966489.png');
+  background-image: url('https://cdn-icons-png.freepik.com/256/10753/10753901.png?semt=ais_hybrid');
 }
 
 /* Rolagem de Fotos de Animais (Banner) */

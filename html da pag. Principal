@@ -218,15 +218,15 @@
         <div id="map"></div>
         <div class="legend map__legend">
             <div>
-                <img src="https://cdn-icons-png.flaticon.com/256/9184/9184277.png" width="16" />
+                <img src="https://cdn-icons-png.flaticon.com/512/6363/6363425.png" width="16" />
                 Clínica veterinária
             </div>
             <div>
-                <img src="https://cdn-icons-png.flaticon.com/512/4891/4891742.png" width="16" />
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/vacina-pet-12706867-10330634.png?f=webp" width="16" />
                 Vacinação antirrábica
             </div>
             <div>
-                <img src="https://cdn-icons-png.flaticon.com/512/2966/2966489.png" width="16" />
+                <img src="https://cdn-icons-png.freepik.com/256/10753/10753901.png?semt=ais_hybrid" width="16" />
                 Castramóvel / Evento
             </div>
         </div>

@@ -19,8 +19,6 @@
             </div>
         </div>
         <ul class="nav__links" id="nav-links">
-             <li><a href="#Cadastro">Cadastro</a></li>
-              <li><a href="#Login">Login</a></li>
             <li><a href="#ONG'S">ONG'S</a></li>
             <li><a href="#Sobre">Sobre</a></li>
             <li><a href="#Mapa">Mapa</a></li>
